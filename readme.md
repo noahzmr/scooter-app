@@ -122,10 +122,21 @@
             </li>
         </ul>
     </li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#hosted">Hosted</a></li>
+    <li><a href="#support">Support</a></li>
+    <li><a href="#demo">Demo</a></li>
   </ol>
 </details>
 
 ## About
+
+This is a school assignment that was created in two blocks, each of which was three weeks long, 
+The scenario from the first block was to write a script that calculates the travel costs for a scooter rental.
+It was up to us if we wanted to keep it a pure terminal application or if we wanted to add a UI to it.
+In the next block, live data should be read out with the help of an Arduino and a Raspberry Pi, and a business plan should be created.
+For us it was possible to connect this with the first block where the sensor package represents a scooter.
+For the time being, no changes will be made.
 
 ### Built With
 [![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](https://expressjs.com/de/)
@@ -469,3 +480,32 @@ Then type *xgps*.
 
 `cgps`
 
+## Contact
+
+<div style='display: flex; flex-direction: row; justify-content: space-around; width: 200px;'>
+
+[![XING](https://img.shields.io/badge/xing-%23006567.svg?style=for-the-badge&logo=xing&logoColor=white)](https://www.xing.com/profile/NoahDanyael_Zeumer/)
+
+<a href='mailto:noah@noerkelit.online' target="_blank"><img alt='Email' src='https://img.shields.io/badge/Email-100000?style=for-the-badge&logo=Email&logoColor=white&labelColor=961414&color=14D386'/></a>
+
+</div>
+
+## Hosted
+
+<div style='display: flex; flex-direction: row; justify-content: space-around; width: 200px;'>
+<a href='https://medocino.net/' target="_blank"><img alt='medocino' src='https://img.shields.io/badge/medocino-100000?style=for-the-badge&logo=medocino&logoColor=white&labelColor=961414&color=26358c'/></a>
+
+<a href='https://medocino.net/' target="_blank"><img alt='exanio' src='https://img.shields.io/badge/exanio-100000?style=for-the-badge&logo=exanio&logoColor=white&labelColor=961414&color=069fad'/></a>
+</div>
+
+## Support
+
+If you like this project and it helped you I would appreciate a little support!
+
+<a href='https://www.buymeacoffee.com/noahdnylzmr' target="_blank"><img alt='buy me a coffee' src='https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png'/></a>
+
+## Demo
+
+The demo version is available to all free.
+All passwords are hashed and salted, so they are not visible in the database, but we recommend not to use passwords that you use somewhere.
+The server is automatically restarted in the evening and all data is deleted.
