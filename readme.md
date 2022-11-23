@@ -455,7 +455,7 @@ Meaning of the colors:
 
 ### SQL Model
 
-![SQL Model](img/img/scooter_app_db.png)
+![SQL Model](img/scooter_app_db.png)
 
 ## Extra
 
