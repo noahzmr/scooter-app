@@ -4,10 +4,10 @@
     <img src="img/favicon.ico" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">React Chat App</h3>
+  <h3 align="center">Scooter App</h3>
 
   <p align="center">
-    A little inspiration for people who want to start a chat app with React!
+    A school project!
     <br />
     <a href="https://github.com/noahzmr/scooter-app"><strong>Explore the docs »</strong></a>
     <br />
