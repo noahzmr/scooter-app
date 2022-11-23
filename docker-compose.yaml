@@ -9,9 +9,9 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./sql/noerkelit_chat.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./sql/scooter-gmbh.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
-      - chat
+      - scooter
     env_file:
       - ./backend/.env
 
@@ -24,11 +24,11 @@ services:
     depends_on:
       - db
     networks:
-      - chat
+      - scooter
 
   # Start the Backendserver, who hosted the frontend
   fullstack:
-    image: Docker.autonubil.net/noerkelit/chat/backend
+    image: Docker.autonubil.net/schule/scootec-gmbh/backend
     restart: always
     ports:
       - 3000:3000
@@ -39,9 +39,8 @@ services:
     depends_on:
       - db
       - adminer
-      - minioserver
     networks:
-      - chat
+      - scooter
 
 networks:
-  chat:
+  scooter:
