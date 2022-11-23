@@ -486,7 +486,7 @@ git clone https://github.com/noahzmr/scooter-app.git
   - [ ] Clone project in the Path
   - [ ] Install node modules
 - [ ] [MariaDB](#mariadb)
-  - [ ] Upload [Script](https://github.com/noahzmr/react-chat/tree/master/sql)
+  - [ ] Upload [Script](https://github.com/noahzmr/scooter-app/blob/master/sql/scooter-gmbh.sql)
 - [ ] Edit the [env](#.env) file / if necessary
   - [ ] DB_HOST
   - [ ] DB_PORT
