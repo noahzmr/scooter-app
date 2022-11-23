@@ -271,9 +271,9 @@ With the help of our partners we were able to create a prototype and thanks to t
 
 #### Personas from the ScooTec
 
-![Persona Boss](img/boss_persona.png)
+<img src="img/boss_persona.png" alt="Persona Boss" style="background: white">
 
-![Persona Employee](img/lf7user_persona.png)
+<img src="img/lf7user_persona.png" alt="Persone Employee" style="background: white">
 
 ### Key Activities
 
@@ -397,7 +397,7 @@ Meaning of the colors:
 
 #### Registrierung
 
-![Registrierung](img/strucktogramm-Registrieren.svg)
+<img src="img/strucktogramm-Registrieren.svg" alt="Registrierung" style="background: white">
 
 #### Anmeldung an der Seite
 
