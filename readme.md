@@ -474,7 +474,7 @@ Meaning of the colors:
 The both insterllation was tested with Ubuntu 20.04LTS, Docker version 20.10.17 and docker-compose version 1.25.0.
 First, this Git repo must be cloned, with the following command:
 ```
-git clone https://github.com/noahzmr/react-chat
+git clone https://github.com/noahzmr/scooter-app.git
 ```
 
 ### Local
@@ -510,14 +510,12 @@ git clone https://github.com/noahzmr/react-chat
 #### UI Directorie
 
 ```
-cd react-chat
-cd ui
+cd scooter_app
 npm install
 ```
 
 After the installation you can check with the command `npm start` if everything worked. If the following window appears at https://localhost:3000 every thing was success!
 
-![Product Name Screen Shot](/img/react_start.png)
 
 #### Backend Directorie
 
@@ -637,22 +635,22 @@ sudo mysql -u root -p
 ```
 
 ```
-CREATE DATABASE noerklit_chat;
+CREATE DATABASE scooter-gmbh;
 ```
-from the path `~/react-chat`:
+from the path `~/scooter_app`:
 ```
-sudo mysql -u root -p noerklit_chat < ./sql/noerkelit_chat.sql
+sudo mysql -u root -p scooter-gmbh < ./sql/scooter-gmbh.sql
 ```
 
 To check if everything works enter: 
 
 ```
-sudo mysqlshow noerkelit_chat
+sudo mysqlshow scooter-gmbh
 ```
 
 Output: 
 ```
-Database: noerkelit_chat
+Database: scooter-gmbh
 +----------------------+
 |       Tables         |
 +----------------------+
@@ -696,9 +694,8 @@ sudo mysql -u root -p
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'root';
 ```
 
-After entering `npm start` again, you should see the following at https://localhost:9001/index :
+After entering `npm start` again, you should see somthing at https://localhost:9001/index.
 
-![Product Name Screen Shot](/img/backend_start.png)
 
 
 ### Docker
@@ -706,7 +703,7 @@ After entering `npm start` again, you should see the following at https://localh
 To install the app with Docker, just run the `docker-compose.yaml` file by going to the project directory and running the following commands:
 
 ```
-cd react-chat
+cd scooter_app
 mkdir backend
 cd backend
 vi .env
@@ -724,10 +721,10 @@ At the first insterllation daurter the whole thing a little longer, because he d
 output:
 
 ```
-Starting chat_db_1 ... done
-Starting chat_minio_1   ... done
-Starting chat_adminer_1 ... done
-Starting chat_fullstack_1 ... done
+Starting scooter_gmbh_db_1 ... done
+Starting scooter_gmbh_minio_1   ... done
+Starting scooter_gmbh_adminer_1 ... done
+Starting scooter_gmbh_fullstack_1 ... done
 ```
 When everything is ready, the UI should be available at https://localhost:3000.
 
