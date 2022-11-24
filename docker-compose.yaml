@@ -28,10 +28,10 @@ services:
 
   # Start the Backendserver, who hosted the frontend
   fullstack:
-    image: Docker.autonubil.net/schule/scootec-gmbh/backend
+    image: gitlab.autonubil.net/schule/scootec-gmbh/backend
     restart: always
     ports:
-      - 3000:3000
+      - 10000:10000
     stdin_open: true
     tty: true
     env_file:
