@@ -399,6 +399,9 @@ The plan area can be divided into the following two areas.
 
 ### Monitor
 
+To monitor the app we use `prometheus.io` and the whole thing is made visible with the help of `grafana`.
+In addition, Sentry will be integrated.
+
 ## Business Canvas
 
 ### Key Partners
