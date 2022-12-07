@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/noahzmr/scooter-app">
-    <img src="img/favicon.png" alt="Logo" width="160" height="80">
+    <img src="img/favicon.png" alt="Logo" width="320">
   </a>
 
   <h3 align="center">Scooter App</h3>
