@@ -245,7 +245,7 @@ PAYPAL_CLIENTID=*************************************************
 
 ```
 
-For insterlation the git responsitory must be clonetted and installed with `npm install``.
+For insterlation the git responsitory must be clonetted and installed with `npm install`.
 With `npx express-generator` you can create an express application.
 
 With `npx create-react-app PROJECT_NAME` you create a React App.
