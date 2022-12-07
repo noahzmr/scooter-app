@@ -131,7 +131,7 @@
   </ol>
 </details>
 
-  <div style="transform: scale(0.5)">
+  <div style="transform: scale(0.25); width: 100%; overflow: auto;">
     <img src="img/devops.png" usemap="#image-map">
     <map name="image-map">
       <area href='#about' alt="Create" title="Create" href=""
