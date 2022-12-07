@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/noahzmr/scooter-app">
-    <img src="img/favicon.ico" alt="Logo" width="80" height="80">
+    <img src="img/favicon.ico" alt="Logo" width="160" height="80">
   </a>
 
   <h3 align="center">Scooter App</h3>
@@ -27,6 +27,7 @@
     <a href="#about">About</a>
     <ul>
         <li><a href="#built-with">Built With</a>
+        <li><a href="#coming-soon">Coming soon</a>
     </ul>
   </li>
     <li>
@@ -147,13 +148,20 @@ For the time being, no changes will be made.
 [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://www.javascript.com/)
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/download?gclid=Cj0KCQiA37KbBhDgARIsAIzce16YF-tHi0cfujV9iwI4m9iC1zlTmt7il2I-97BzOt8PvtOG8AlIApEaAuCaEALw_wcB)
-![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://developer.paypal.com/)
 <a href='https://github.com/speakeasyjs/speakeasy' target="_blank"><img alt='speakeasy' src='https://img.shields.io/badge/speakeasy-100000?style=for-the-badge&logo=speakeasy&logoColor=white&labelColor=961414&color=f95959'/></a>
 <a href='https://nodemailer.com/about/' target="_blank"><img alt='node mailer' src='https://img.shields.io/badge/node mailer-100000?style=for-the-badge&logo=node mailer&logoColor=white&labelColor=961414&color=233142'/></a>
 <a href='https://leafletjs.com/' target="_blank"><img alt='Leaflet' src='https://img.shields.io/badge/Leaflet-100000?style=for-the-badge&logo=Leaflet&logoColor=white&labelColor=961414&color=233142'/></a>
-![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)
-![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)
+[![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)](https://www.raspberrypi.com/)
+[![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)](https://www.arduino.cc/)
 <a href='https://serialport.io/' target="_blank"><img alt='Node SerialPort' src='https://img.shields.io/badge/d3JS-100000?style=for-the-badge&logo=d3JS&logoColor=white&labelColor=961414&color=233142'/></a>
+[![GitLab CI](https://img.shields.io/badge/gitlab%20ci-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)](https://about.gitlab.com/resources/scaled-ci-cd/?utm_medium=cpc&utm_source=google&utm_campaign=singleappci_emea_pr_rsa_nb_exact_&utm_content=scaled-ci-cd_digital_x-pr_english_&&utm_term=ci%20cd&_bt=626050032843&_bk=ci%20cd&_bm=b&_bn=g&_bg=103866327354&gclid=Cj0KCQiAkMGcBhCSARIsAIW6d0D1Y3nJO2wh0tH5-NYqUGQ0qftov1pSSJQwPA3Z7piJ8Yc8Ex1IKLkaAiMiEALw_wcB)
+
+### Coming soon
+<a href='https://sentry.io/' target="_blank"><img alt='Sentry' src='https://img.shields.io/badge/sentry.io-100000?style=for-the-badge&logo=d3JS&logoColor=white&labelColor=961414&color=233142'/></a>
+[![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
+[![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white)](https://prometheus.io/)
+[![Grafana](https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white)](https://grafana.com/)
 
 ## Introduction
 
@@ -173,7 +181,7 @@ You can also add cards and save them.
 
 ### Scooter Hardeware
 
-With the Scooters is often not as desired umgegagen, whereby it comes to damage.
+With the Scooters is often not as desired handled, whereby it comes to damage.
 In general, the data transmission does not run as desired and needed.
 Therefore, we need to develop a device that collects important data and sends it to a central location.
 With an admin account should be logged on their site and to each scooter a dashboard can be retrieved.
@@ -747,13 +755,9 @@ Then type *xgps*.
 
 ## Contact
 
-<div style='display: flex; flex-direction: row; justify-content: space-around; width: 200px;'>
-
 [![XING](https://img.shields.io/badge/xing-%23006567.svg?style=for-the-badge&logo=xing&logoColor=white)](https://www.xing.com/profile/NoahDanyael_Zeumer/)
+[![Mail](https://custom-icon-badges.demolab.com/badge/-noah@noerkelit.online-red?[style=for-the-badge&logo=mention&logoColor=white)](mailto:noah@noerkelit.online)
 
-<a href='mailto:noah@noerkelit.online' target="_blank"><img alt='Email' src='https://img.shields.io/badge/Email-100000?style=for-the-badge&logo=Email&logoColor=white&labelColor=961414&color=14D386'/></a>
-
-</div>
 
 ## Hosted
 
