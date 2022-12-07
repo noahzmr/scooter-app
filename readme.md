@@ -425,19 +425,19 @@ The project was financed by individual sponsors plus the company's own capital. 
 
 ## Features
 
-[x] Account creation
-[x] Password is sallted and hashed and stored in the database.
-[x] A 2 factor token is automatically generated, the user has to scan this token at the first login, as well as enter the token.
-[x] It is always logged in with a token
-[x] Automated and personalized emails 
-[x] A world map that searches for the current position
-[x] View live location on the map, with the profile picture
-[x] View scooters on the map
-[x] Add and save payment methods.
-[x] Rent a scooter
-[x] Calculate duration and cost
-[x] Invoice in the app, as well as in by email
-[x] Add credit, e.g. with a PayPal account
+- [x] Account creation
+- [x] Password is sallted and hashed and stored in the database.
+- [x] A 2 factor token is automatically generated, the user has to scan this token at the first login, as well as enter the token.
+- [x] It is always logged in with a token
+- [x] Automated and personalized emails 
+- [x] A world map that searches for the current position
+- [x] View live location on the map, with the profile picture
+- [x] View scooters on the map
+- [x] Add and save payment methods.
+- [x] Rent a scooter
+- [x] Calculate duration and cost
+- [x] Invoice in the app, as well as in by email
+- [x] Add credit, e.g. with a PayPal account
 
 ### Structure chart
 
