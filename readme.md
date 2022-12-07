@@ -39,7 +39,7 @@
         </ul>
     </li>
     <li>
-        <a href="requirements">Requirements</a>
+        <a href="#requirements">Requirements</a>
         <ul>
             <li><a href="#software">Software</a></li>
             <li>
@@ -131,10 +131,10 @@
   </ol>
 </details>
 
-  <div style="transform: scale(0.25); width: 100%; overflow: auto;">
-    <img src="img/devops.png" usemap="#image-map">
+  <div>
+    <img style="transform: scale(1); width: 500px;" src="img/devops.png" usemap="#image-map">
     <map name="image-map">
-      <area href='#about' alt="Create" title="Create" href=""
+      <area href='https://github.com/noahzmr/scooter-app' alt="Create" title="Create" style='border: 2px solid white'
         coords="347,149,317,151,293,152,266,163,254,164,238,175,221,188,205,202,189,214,181,226,170,237,165,256,160,272,154,290,150,318,79,348,8,320,13,274,28,227,50,176,100,105,151,64,212,31,280,12,343,7,316,79,316,85,344,152,295,94,305,90"
         shape="poly">
       <area target="" alt="verify" title="verify" href=""
@@ -425,19 +425,19 @@ The project was financed by individual sponsors plus the company's own capital. 
 
 ## Features
 
-- Account creation
-- Password is sallted and hashed and stored in the database.
-- A 2 factor token is automatically generated, the user has to scan this token at the first login, as well as enter the token.
-- It is always logged in with a token
-- Automated and personalized emails 
-- A world map that searches for the current position
-- View live location on the map, with the profile picture
-- View scooters on the map
-- Add and save payment methods.
-- Rent a scooter
-- Calculate duration and cost
-- Invoice in the app, as well as in by email
-- Add credit, e.g. with a PayPal account
+[x] Account creation
+[x] Password is sallted and hashed and stored in the database.
+[x] A 2 factor token is automatically generated, the user has to scan this token at the first login, as well as enter the token.
+[x] It is always logged in with a token
+[x] Automated and personalized emails 
+[x] A world map that searches for the current position
+[x] View live location on the map, with the profile picture
+[x] View scooters on the map
+[x] Add and save payment methods.
+[x] Rent a scooter
+[x] Calculate duration and cost
+[x] Invoice in the app, as well as in by email
+[x] Add credit, e.g. with a PayPal account
 
 ### Structure chart
 
