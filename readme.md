@@ -104,6 +104,8 @@
     <li>
         <a href="#features">Features</a>
         <ul>
+            <li><a href='#current-version'>Current Version</a></li>
+            <li><a href='#next-version'>Next Version</a></li>
             <li><a href="#structure-chart">Structure Chart</a></li>
             <li>
                 <a href="#uml">UML</a>
@@ -242,10 +244,11 @@ MAIL_NAME= <****>
 PAYPAL_CLIENTID=*************************************************
 
 ```
-Zur Insterlation muss das Git Responsitory geclonet werden und mit ``npm install`` installiert werden.
-Mit `npx express-generator` eine Express Anwendung.
 
-Mit `npx create-react-app PROJECT_NAME` ertsllt man eine React App.
+For insterlation the git responsitory must be clonetted and installed with `npm install``.
+With `npx express-generator` you can create an express application.
+
+With `npx create-react-app PROJECT_NAME` you create a React App.
 
 
 ### Scooter Hardware
@@ -328,11 +331,15 @@ The data can be displayed visually with the help of D3.
 
 ### Plan
 
+The plan area can be divided into the following two areas.
+
 <details>
   <summary>Technical</summary>
     <li>
         <a href="#features">Features</a>
         <ul>
+            <li><a href='#current-version'>Current Version</a></li>
+            <li><a href='#next-version'>Next Version</a></li>
             <li><a href="#structure-chart">Structure Chart</a></li>
             <li>
                 <a href="#uml">UML</a>
@@ -505,24 +512,41 @@ The project was financed by individual sponsors plus the company's own capital. 
 
 ## Features
 
-- [x] Account creation
-- [x] Password is sallted and hashed and stored in the database.
-- [x] A 2 factor token is automatically generated, the user has to scan this token at the first login, as well as enter the token.
+### Current Version
+
+- [x] Custom SignIn/SignUp
+    - [x] With OTP
+        - [x] A 2 factor token is automatically generated, the user has to scan this token at the first login, as well as enter the token.
+    - [x] Password is sallted and hashed and stored in the database.
+- [x] Log in with a specific user.
 - [x] It is always logged in with a token
 - [x] Automated and personalized emails 
+    - [x] By creating a Account
+    - [x] New Billing arrives
 - [x] A world map that searches for the current position
-- [x] View live location on the map, with the profile picture
-- [x] View scooters on the map
-- [x] Add and save payment methods.
+    - [x] View live location on the map, with the profile picture
+    - [x] View scooters on the map
+<!-- - [x] Add and save payment methods. -->
 - [x] Rent a scooter
 - [x] Calculate duration and cost
 - [x] Invoice in the app, as well as in by email
 - [x] Add credit, e.g. with a PayPal account
 
+### Next Version
+
+The next version should fix bugs and add the following features:
+
+- [ ] Revise UI/UX
+  - [ ] Mobile View Fixes
+- [ ] Diffrent Providers with Keycloak
+  - [ ] ![Google](https://img.shields.io/badge/google-4285F4?style=for-the-badge&logo=google&logoColor=white)
+  - [ ] ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+  - [ ] ![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)
+
 ### Structure chart
 
 Meaning of the colors:
-- Blue = <p style='color: blue'>Frontend</p>
+- Blue = Frontend
 - Green = Backend
 
 #### Registrierung
