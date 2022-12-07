@@ -522,7 +522,7 @@ The project was financed by individual sponsors plus the company's own capital. 
 ### Structure chart
 
 Meaning of the colors:
-- Blue = Frontend
+- Blue = <p style='color: blue'>Frontend</p>
 - Green = Backend
 
 #### Registrierung
