@@ -131,6 +131,7 @@
   </ol>
 </details>
 
+
   <div style="position: relative;">
     <img src="img/devops.png" usemap="#image-map">
     <map name="image-map">
