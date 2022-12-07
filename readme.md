@@ -65,12 +65,24 @@
         </ul>
     </li>
     <li>
+        <a href="#devops">DevOps</a>
+        <ul>
+            <li><a href="#plan">Plan</a></li>
+            <li><a href="#create">Create</a></li>
+            <li><a href="#verify">Verify</a></li>
+            <li><a href="#package">Package</a></li>
+            <li><a href="#release">Release</a></li>
+            <li><a href="#configure">Configure</a></li>
+            <li><a href="#monitor">Monitor</a></li>
+        </ul>
+    </li>
+    <li>
         <a href="#business-canvas">Business Canvas</a>
         <ul>
             <li>
                 <a href="#key-partners">Key Partners</a>
                 <ul>
-                    <li><a href="personas-from-the-scootec">Personas from the ScooTec</a></li>
+                    <li><a href="#personas-from-the-scootec">Personas from the ScooTec</a></li>
                 </ul>
             </li>
             <li><a href="#key-activities">Key Activities</a></li>
@@ -130,37 +142,6 @@
     <li><a href="#demo">Demo</a></li>
   </ol>
 </details>
-
-
-  <div style="position: relative;">
-    <img src="img/devops.png" usemap="#image-map">
-    <map name="image-map">
-      <area href='https://gitlab.autonubil.net/schule/scootec-gmbh/backend' alt="Create" title="Create" style='border: 2px solid white'
-        coords="347,149,317,151,293,152,266,163,254,164,238,175,221,188,205,202,189,214,181,226,170,237,165,256,160,272,154,290,150,318,79,348,8,320,13,274,28,227,50,176,100,105,151,64,212,31,280,12,343,7,316,79,316,85,344,152,295,94,305,90"
-        shape="poly">
-      <area target="" alt="verify" title="verify" href=""
-        coords="7,337,79,364,145,339,153,389,179,443,213,489,267,518,316,530,346,600,317,670,258,665,203,644,159,621,104,576,67,534,34,474,13,414,7,370"
-        shape="poly">
-      <area target="" alt="package" title="package" href=""
-        coords="334,531,395,522,449,494,480,467,505,434,520,396,528,364,601,335,670,361,659,435,644,474,620,515,596,549,565,584,497,631,441,655,373,670,333,671,361,603"
-        shape="poly">
-      <area target="" alt="realase" title="realase" href=""
-        coords="530,346,601,320,670,343,683,272,721,208,775,171,833,150,886,149,928,89,917,13,836,7,760,22,690,51,638,89,595,138,548,225,533,283,529,317"
-        shape="poly">
-      <area target="" alt="configure" title="configure" href=""
-        coords="932,18,943,91,902,152,965,179,1005,211,1029,247,1047,293,1053,333,1051,364,1116,406,1189,400,1184,256,1143,169,1080,93,999,36"
-        shape="poly">
-      <area target="" alt="monitor" title="monitor" href=""
-        coords="840,529,797,595,807,665,840,671,870,674,952,660,1036,625,1093,577,1145,513,1187,414,1113,424,1050,382,1010,468,940,522,883,530,869,534"
-        shape="poly">
-      <area target="" alt="plan1" title="plan1" href=""
-        coords="669,366,665,402,660,427,652,457,635,492,600,548,660,608,693,627,750,653,785,662,777,595,814,530,744,493,699,442"
-        shape="poly">
-      <area target="" alt="plan2" title="plan2" href=""
-        coords="361,151,332,79,363,7,438,23,501,49,552,85,596,132,568,175,551,208,544,226,538,254,526,309,510,249,466,195,411,158"
-        shape="poly">
-    </map>
-  </div>
 
 ## About
 
@@ -313,6 +294,104 @@ The temperature can also show useful disadvantage for the customer, such as "It 
 
 The data can be displayed visually with the help of D3.
 
+## DevOps
+
+  <div>
+    <img src="img/devops.png" usemap="#image-map">
+    <map name="image-map">
+      <area href='#plan' alt="Create" title="Create"
+        coords="347,149,317,151,293,152,266,163,254,164,238,175,221,188,205,202,189,214,181,226,170,237,165,256,160,272,154,290,150,318,79,348,8,320,13,274,28,227,50,176,100,105,151,64,212,31,280,12,343,7,316,79,316,85,344,152,295,94,305,90"
+        shape="poly">
+      <area target="" alt="verify" title="verify" href="#verify"
+        coords="7,337,79,364,145,339,153,389,179,443,213,489,267,518,316,530,346,600,317,670,258,665,203,644,159,621,104,576,67,534,34,474,13,414,7,370"
+        shape="poly">
+      <area target="" alt="package" title="package" href="#package"
+        coords="334,531,395,522,449,494,480,467,505,434,520,396,528,364,601,335,670,361,659,435,644,474,620,515,596,549,565,584,497,631,441,655,373,670,333,671,361,603"
+        shape="poly">
+      <area target="" alt="realase" title="realase" href="#realase"
+        coords="530,346,601,320,670,343,683,272,721,208,775,171,833,150,886,149,928,89,917,13,836,7,760,22,690,51,638,89,595,138,548,225,533,283,529,317"
+        shape="poly">
+      <area target="" alt="configure" title="configure" href=""
+        coords="932,18,943,91,902,152,965,179,1005,211,1029,247,1047,293,1053,333,1051,364,1116,406,1189,400,1184,256,1143,169,1080,93,999,36"
+        shape="poly">
+      <area target="" alt="monitor" title="monitor" href="#monitor"
+        coords="840,529,797,595,807,665,840,671,870,674,952,660,1036,625,1093,577,1145,513,1187,414,1113,424,1050,382,1010,468,940,522,883,530,869,534"
+        shape="poly">
+      <area target="" alt="plan1" title="plan1" href="#features"
+        coords="669,366,665,402,660,427,652,457,635,492,600,548,660,608,693,627,750,653,785,662,777,595,814,530,744,493,699,442"
+        shape="poly">
+      <area target="" alt="plan2" title="plan2" href="#features"
+        coords="361,151,332,79,363,7,438,23,501,49,552,85,596,132,568,175,551,208,544,226,538,254,526,309,510,249,466,195,411,158"
+        shape="poly">
+    </map>
+  </div>
+
+### Plan
+
+<details>
+  <summary>Technical</summary>
+    <li>
+        <a href="#features">Features</a>
+        <ul>
+            <li><a href="#structure-chart">Structure Chart</a></li>
+            <li>
+                <a href="#uml">UML</a>
+                <ul>
+                    <li><a href="#use-case">Use Case</a></li>
+                    <li><a href="#sequence-diagram">Sequence Diagram</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#flowdiagramm">Flowdiagramm</a>
+                <ul>
+                    <li><a href="#scootec-gmbh-website">ScooTec GmbH Website</a></li>
+                    <li><a href="#sensor-device-with-the-website">Sensor Device with the Website</a></li>
+                </ul>
+            </li>
+            <li><a href="#electric-circuit-diagram">Electric Circuit Diagram</a></li>
+            <li><a href="#sql-model">SQL Model</a></li>
+        </ul>
+    </li>
+</details>
+
+<details>
+<summary>Business Canvas</summary>
+    <ul>
+        <li>
+            <a href="#key-partners">Key Partners</a>
+            <ul>
+                <li><a href="#personas-from-the-scootec">Personas from the ScooTec</a></li>
+            </ul>
+        </li>
+        <li><a href="#key-activities">Key Activities</a></li>
+        <li><a href="#key-resources">Key Resources</a></li>
+        <li><a href="#customer-relationships">Customer Relationships</a></li>
+        <li><a href="#customer-segments">Customer Segments</a></li>
+        <li><a href="#channels">Channels</a></li>
+        <li><a href="#value-propositions">Value Propositions</a></li>
+        <li>
+            <a href="#cost-structure">Cost Structure</a>
+            <ul>
+                <li><a href="#production">Production</a></li>
+                <li><a href="#logistik">Logistik</a></li>
+                <li><a href="#selling">Selling</a></li>
+            </ul>
+        </li>
+    </ul>
+</details>
+
+### Create
+
+### Verify
+
+### Package
+
+### Release
+
+### Configure
+
+### Monitor
+
 ## Business Canvas
 
 ### Key Partners
@@ -452,15 +531,15 @@ Meaning of the colors:
 
 #### Anmeldung an der Seite
 
-![Anmeldung](img/strucktogramm-Anmeldung an der Seite.svg)
+![Anmeldung](img/strucktogramm_anmeldung_an_der_seite.svg)
 
 #### Kosten Berechnen
 
-![Kosten](img/strucktogramm-Kosten Berechnen.svg)
+![Kosten](img/strucktogramm_kosten_berechnen.svg)
 
 #### Karten Input
 
-![Karten](img/strucktogramm-Karten Input.svg)
+![Karten](img/strucktogramm_karten_input.svg)
 
 #### PayPal
 
