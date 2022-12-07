@@ -132,7 +132,7 @@
 </details>
 
   <div style="position: relative;">
-    <img style="transform: scale(1); width: 500px;" src="img/devops.png" usemap="#image-map">
+    <img src="img/devops.png" usemap="#image-map">
     <map name="image-map">
       <area href='https://gitlab.autonubil.net/schule/scootec-gmbh/backend' alt="Create" title="Create" style='border: 2px solid white'
         coords="347,149,317,151,293,152,266,163,254,164,238,175,221,188,205,202,189,214,181,226,170,237,165,256,160,272,154,290,150,318,79,348,8,320,13,274,28,227,50,176,100,105,151,64,212,31,280,12,343,7,316,79,316,85,344,152,295,94,305,90"
