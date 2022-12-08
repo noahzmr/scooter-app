@@ -1,10 +1,3 @@
--- --------------------------------------------------------
--- Host:                         localhost
--- Server Version:               10.8.3-MariaDB - mariadb.org binary distribution
--- Server Betriebssystem:        Win64
--- HeidiSQL Version:             11.3.0.6295
--- --------------------------------------------------------
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;

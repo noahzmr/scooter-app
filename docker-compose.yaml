@@ -44,6 +44,8 @@ services:
       - scooter
 
     # Prometheus
+  
+  # Prometheus
   prometheus:
     image: prom/prometheus
     restart: always
@@ -51,29 +53,30 @@ services:
       - 9090:9090
     stdin_open: true
     tty: true
-    env_file:
-      - ./config/prometheus/prometheus.yml
+    volumes:
+      - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     depends_on:
       - db
       - adminer
     networks:
-      - fullstack
+      - scooter
 
   # Grafana 
-  prometheus:
+  grafana:
     image: grafana/grafana
     restart: always
     ports:
-      - 4000:4000
+      - 3000:3000
     stdin_open: true
     tty: true
     env_file:
-      - ./config/grafana/datasources.yml
+      - ./backend/.env
+    volumes:
+      - ./config/grafana/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
     depends_on:
-      - db
-      - adminer
+      - prometheus
     networks:
-      - prometheus 
+      - scooter 
 
 networks:
   scooter:
