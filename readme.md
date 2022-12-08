@@ -173,12 +173,12 @@ For the time being, no changes will be made.
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 <a href='https://min.io/' target="_blank"><img alt='Leaflet' src='https://img.shields.io/badge/minio-100000?style=for-the-badge&logo=minio&logoColor=white&labelColor=961414&color=233142'/></a>
 [![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://de.wikipedia.org/wiki/C%2B%2B)
+[![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white)](https://prometheus.io/)
+[![Grafana](https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white)](https://grafana.com/)
 
 ### Coming soon
 <a href='https://sentry.io/' target="_blank"><img alt='Sentry' src='https://img.shields.io/badge/sentry.io-100000?style=for-the-badge&logo=sentry&logoColor=white&labelColor=961414&color=233142'/></a>
 [![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
-[![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white)](https://prometheus.io/)
-[![Grafana](https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white)](https://grafana.com/)
 <a href='https://purgecss.com/' target="_blank"><img alt='Leaflet' src='https://img.shields.io/badge/Purgecss-100000?style=for-the-badge&logo=purgecss&logoColor=white&labelColor=961414&color=233142'/></a>
 
 ## Introduction
