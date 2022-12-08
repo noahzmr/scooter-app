@@ -26,6 +26,23 @@ services:
     networks:
       - scooter
 
+  # Prometheus
+  prometheus:
+    image: docker.autonubil.net/schule/scootec-gmbh/backend
+    restart: always
+    ports:
+      - 9090:9090
+    stdin_open: true
+    tty: true
+    env_file:
+      - ./prometheus/prometheus.yml
+    depends_on:
+      - db
+      - adminer
+    networks:
+      - scooter
+  # Grafana 
+
   # Start the Backendserver, who hosted the frontend
   fullstack:
     image: docker.autonubil.net/schule/scootec-gmbh/backend
@@ -39,6 +56,7 @@ services:
     depends_on:
       - db
       - adminer
+      - prometheus
     networks:
       - scooter
 
