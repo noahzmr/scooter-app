@@ -9,7 +9,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./sql/scooter-gmbh.sql:/docker-entrypoint-initdb.d/init.sql
+      - /home/noerkel/bs14-itech/scooter/documentatio/sql/scooter-gmbh.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - scooter
     env_file:
@@ -57,6 +57,7 @@ services:
     depends_on:
       - db
       - adminer
+      - fullstack
     networks:
       - scooter
 
