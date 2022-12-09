@@ -73,10 +73,28 @@ services:
       - ./backend/.env
     volumes:
       - ./config/grafana/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
+      - ./config/grafana/dashboards:/etc/grafana/provisioning/dashboards
     depends_on:
       - prometheus
     networks:
       - scooter 
 
+  # Start the Backendserver, who hosted the frontend
+  scooterOne:
+    image: docker.autonubil.net/schule/scootec-gmbh/scooter-hardware/node-server
+    restart: always
+    ports:
+      - 9100:9100
+    stdin_open: true
+    tty: true
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - db
+      - adminer
+      - fullstack
+    networks:
+      - scooter
+      
 networks:
   scooter:

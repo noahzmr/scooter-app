@@ -9,3 +9,10 @@ datasources:
     basicAuth: false
     isDefault: true
     editable: true
+providers:
+  - name: dashboards
+    type: file
+    updateIntervalSeconds: 30
+    options:
+      path: ./dashboards
+      foldersFromFilesStructure: true
