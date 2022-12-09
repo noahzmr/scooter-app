@@ -39,7 +39,6 @@ services:
     depends_on:
       - db
       - adminer
-      - prometheus
     networks:
       - scooter
 
