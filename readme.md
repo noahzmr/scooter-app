@@ -168,16 +168,16 @@ For the time being, no changes will be made.
 <a href='https://leafletjs.com/' target="_blank"><img alt='Leaflet' src='https://img.shields.io/badge/Leaflet-100000?style=for-the-badge&logo=Leaflet&logoColor=white&labelColor=961414&color=233142'/></a>
 [![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)](https://www.raspberrypi.com/)
 [![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)](https://www.arduino.cc/)
-<a href='https://serialport.io/' target="_blank"><img alt='Node SerialPort' src='https://img.shields.io/badge/d3js-100000?style=for-the-badge&logo=d3JS&logoColor=white&labelColor=961414&color=233142'/></a>
+<a href='https://serialport.io/' target="_blank"><img alt='Node SerialPort' src='https://img.shields.io/badge/serialport-100000?style=for-the-badge&logo=serialport&logoColor=white&labelColor=961414&color=233142'/></a>
 [![GitLab CI](https://img.shields.io/badge/gitlab%20ci-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)](https://about.gitlab.com/resources/scaled-ci-cd/?utm_medium=cpc&utm_source=google&utm_campaign=singleappci_emea_pr_rsa_nb_exact_&utm_content=scaled-ci-cd_digital_x-pr_english_&&utm_term=ci%20cd&_bt=626050032843&_bk=ci%20cd&_bm=b&_bn=g&_bg=103866327354&gclid=Cj0KCQiAkMGcBhCSARIsAIW6d0D1Y3nJO2wh0tH5-NYqUGQ0qftov1pSSJQwPA3Z7piJ8Yc8Ex1IKLkaAiMiEALw_wcB)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 <a href='https://min.io/' target="_blank"><img alt='Leaflet' src='https://img.shields.io/badge/minio-100000?style=for-the-badge&logo=minio&logoColor=white&labelColor=961414&color=233142'/></a>
 [![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://de.wikipedia.org/wiki/C%2B%2B)
 [![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white)](https://prometheus.io/)
 [![Grafana](https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white)](https://grafana.com/)
+<a href='https://sentry.io/' target="_blank"><img alt='Sentry' src='https://img.shields.io/badge/sentry.io-100000?style=for-the-badge&logo=sentry&logoColor=white&labelColor=961414&color=233142'/></a>
 
 ### Coming soon
-<a href='https://sentry.io/' target="_blank"><img alt='Sentry' src='https://img.shields.io/badge/sentry.io-100000?style=for-the-badge&logo=sentry&logoColor=white&labelColor=961414&color=233142'/></a>
 [![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
 <a href='https://purgecss.com/' target="_blank"><img alt='Leaflet' src='https://img.shields.io/badge/Purgecss-100000?style=for-the-badge&logo=purgecss&logoColor=white&labelColor=961414&color=233142'/></a>
 
@@ -298,8 +298,7 @@ Thanks to the user data, the target group analysis is easier and it is possible 
 Also the condition of the scooters can be seen faster, does a user drop the scooter or did it happen after the customer left.
 
 The temperature can also show useful disadvantage for the customer, such as "It might be slippery, so please drive carefully." 
-
-The data can be displayed visually with the help of D3.
+F
 
 ## DevOps
 
