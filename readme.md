@@ -233,23 +233,38 @@ To test the app you need:
 As well as a `.env` file in `backend` path that looks like this:
 
 ```
-DB_HOST=************
-DB_PORT=*****
-DB_USER=**********
-DB_PASSWORD=*************** 
+# DB
+DB_HOST=*************
+DB_PORT=******
+DB_USER=****
+DB_PASSWORD=*************
 DB_DATABASE=scooter-gmbh
 
-MAIL_USER=****@***.***
-MAIL_PASSWORD=*********
+# Mail
+MAIL_USER=*******@****.**
+MAIL_PASSWORD=*******
 MAIL_HOST=imap.****.**
 MAIL_PORT=***
-MAIL_TLS=false
+MAIL_TLS=***
 MAIL_SECURE=true
-MAIL_SERVICE=******
-MAIL_NAME= <****>
+MAIL_SERVICE=*****
+MAIL_NAME= <****@****.**>
 
-PAYPAL_CLIENTID=*************************************************
+# Minio
+MINIO_ROOT_USER=****
+MINIO_ROOT_PASSWORD=********
 
+# Client
+MINIO_CLIENT_ENDPOINT=*******
+MINIO_CLIENT_USESSL=*****
+MINIO_CLIENT_ACCESSKEY=****
+MINIO_CLIENT_SECRETKEY=********
+
+# PayPal
+PAYPAL_CLIENTID=***************************
+
+# Sentry
+SENTRY_DNS=https://****************@sentry.********/**
 ```
 
 For insterlation the git responsitory must be clonetted and installed with `npm install`.
