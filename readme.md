@@ -164,7 +164,7 @@ For the time being, no changes will be made.
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/download?gclid=Cj0KCQiA37KbBhDgARIsAIzce16YF-tHi0cfujV9iwI4m9iC1zlTmt7il2I-97BzOt8PvtOG8AlIApEaAuCaEALw_wcB)
 [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://developer.paypal.com/)
 <a href='https://github.com/speakeasyjs/speakeasy' target="_blank"><img alt='speakeasy' src='https://img.shields.io/badge/speakeasy-100000?style=for-the-badge&logo=speakeasy&logoColor=white&labelColor=961414&color=f95959'/></a>
-<a href='https://nodemailer.com/about/' target="_blank"><img alt='node mailer' src='https://img.shields.io/badge/node mailer-100000?style=for-the-badge&logo=node mailer&logoColor=white&labelColor=961414&color=233142'/></a>
+<a href='https://nodemailer.com/about/' target="_blank"><img alt='node mailer' src='https://img.shields.io/badge/node mailer-100000?style=for-the-badge&logo=nodemailer&logoColor=white&labelColor=961414&color=233142'/></a>
 <a href='https://leafletjs.com/' target="_blank"><img alt='Leaflet' src='https://img.shields.io/badge/Leaflet-100000?style=for-the-badge&logo=Leaflet&logoColor=white&labelColor=961414&color=233142'/></a>
 [![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)](https://www.raspberrypi.com/)
 [![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)](https://www.arduino.cc/)
@@ -176,10 +176,13 @@ For the time being, no changes will be made.
 [![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white)](https://prometheus.io/)
 [![Grafana](https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white)](https://grafana.com/)
 <a href='https://sentry.io/' target="_blank"><img alt='Sentry' src='https://img.shields.io/badge/sentry.io-100000?style=for-the-badge&logo=sentry&logoColor=white&labelColor=961414&color=233142'/></a>
+<a href='https://docs.renovatebot.com/' target="_blank"><img alt='renovatebot' src='https://img.shields.io/badge/renovatebot-100000?style=for-the-badge&logo=renovatebot&logoColor=white&labelColor=961414&color=233142'/></a>
+<a href='https://purgecss.com/' target="_blank"><img alt='Leaflet' src='https://img.shields.io/badge/Purgecss-100000?style=for-the-badge&logo=purgecss&logoColor=white&labelColor=961414&color=233142'/></a>
+[![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)
+<a href='https://www.sonarqube.org/' target="_blank"><img alt='sonarqube' src='https://img.shields.io/badge/sonarqube-100000?style=for-the-badge&logo=sonarqube&logoColor=white&labelColor=961414&color=233142'/></a>
 
 ### Coming soon
 [![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
-<a href='https://purgecss.com/' target="_blank"><img alt='Leaflet' src='https://img.shields.io/badge/Purgecss-100000?style=for-the-badge&logo=purgecss&logoColor=white&labelColor=961414&color=233142'/></a>
 
 ## Introduction
 
@@ -404,6 +407,15 @@ The plan area can be divided into the following two areas.
 
 To monitor the app we use `prometheus.io` and the whole thing is made visible with the help of `grafana`.
 In addition, Sentry will be integrated.
+
+### Pipline
+
+Sonar -> Check Code Quality
+Docker -> Build docker Container and Publish 
+Renovat -> Search for newer dependencies
+Postbuild -> Run Purgecss
+prometheus -> get metrics about the Server, and Custom
+Sentry -> error monitoring
 
 ## Business Canvas
 
