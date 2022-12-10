@@ -803,12 +803,10 @@ Database: scooter-gmbh
 +----------------------+
 |       Tables         |
 +----------------------+
-| bank                 |
 | billing              |
 | credit               |
 | login                |
 | otp                  |
-| payment_methods      |
 | ride                 |
 | role                 |
 | scooter              |       
@@ -816,7 +814,6 @@ Database: scooter-gmbh
 | scooter_data_tem_hum |
 | scoter_data          |  
 | user                 |
-| userpicture          |
 +----------------------+
 ```
 
