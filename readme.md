@@ -180,6 +180,8 @@ For the time being, no changes will be made.
 <a href='https://purgecss.com/' target="_blank"><img alt='Leaflet' src='https://img.shields.io/badge/Purgecss-100000?style=for-the-badge&logo=purgecss&logoColor=white&labelColor=961414&color=233142'/></a>
 [![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)
 <a href='https://www.sonarqube.org/' target="_blank"><img alt='sonarqube' src='https://img.shields.io/badge/sonarqube-100000?style=for-the-badge&logo=sonarqube&logoColor=white&labelColor=961414&color=233142'/></a>
+[![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/en/main)
+[![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
 
 ### Coming soon
 [![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
