@@ -169,7 +169,6 @@ The scenario from the first block was to write a script that calculates the trav
 It was up to us if we wanted to keep it a pure terminal application or if we wanted to add a UI to it.
 In the next block, live data should be read out with the help of an Arduino and a Raspberry Pi, and a business plan should be created.
 For us it was possible to connect this with the first block where the sensor package represents a scooter.
-For the time being, no changes will be made.
 
 ### Built With
 [![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](https://expressjs.com/de/)
@@ -491,15 +490,15 @@ The plan area can be divided into the following two areas.
 
 #### Sentry
 
-Sentry is an error and performance monitoring tool.
+[Sentry](https://sentry.io/) is an error and performance monitoring tool.
 
 #### Prometheus
 
-Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud.
+[Prometheus](https://prometheus.io/) is an open-source systems monitoring and alerting toolkit originally built at SoundCloud.
 
 #### Grafana
 
-Grafana is an open source interactive data-visualization platform, developed by Grafana Labs, which allows users to see their data via charts and graphs that are unified into one dashboard (or multiple dashboards!) for easier interpretation and understanding.
+[Grafana](https://grafana.com/) is an open source interactive data-visualization platform, developed by Grafana Labs, which allows users to see their data via charts and graphs that are unified into one dashboard (or multiple dashboards!) for easier interpretation and understanding.
 
 ### Pipline
 
