@@ -491,10 +491,15 @@ The plan area can be divided into the following two areas.
 
 #### Sentry
 
+Sentry is an error and performance monitoring tool.
+
 #### Prometheus
+
+Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud.
 
 #### Grafana
 
+Grafana is an open source interactive data-visualization platform, developed by Grafana Labs, which allows users to see their data via charts and graphs that are unified into one dashboard (or multiple dashboards!) for easier interpretation and understanding.
 
 ### Pipline
 
