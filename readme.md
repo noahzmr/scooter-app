@@ -162,22 +162,22 @@ For the time being, no changes will be made.
 [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://www.javascript.com/)
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/download?gclid=Cj0KCQiA37KbBhDgARIsAIzce16YF-tHi0cfujV9iwI4m9iC1zlTmt7il2I-97BzOt8PvtOG8AlIApEaAuCaEALw_wcB)
-[![PayPal](https://img.shields.io/badge/speakeasyjs-00457C?style=for-the-badge&logo=speakeasyjs&logoColor=white)](https://developer.paypal.com/)
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://developer.paypal.com/)
 [![SpeakeasyJS](https://img.shields.io/badge/speakeasyjs-00457C?style=for-the-badge&logo=speakeasyjs&logoColor=white)](https://github.com/speakeasyjs/speakeasy)
-[![nodemailer](https://img.shields.io/badge/nodemailer-89CFF0?style=for-the-badge&logo=nodemailer&logoColor=white)](https://nodemailer.com/about/)
-[![LeafletJS](https://img.shields.io/badge/Leaflet-32CD32?style=for-the-badge&logo=Leaflet&logoColor=white)](https://leafletjs.com/)
+[![nodemailer](https://img.shields.io/badge/nodemailer-00457C?style=for-the-badge&logo=nodemailer&logoColor=white)](https://nodemailer.com/about/)
+[![LeafletJS](https://img.shields.io/badge/Leaflet-00457C?style=for-the-badge&logo=Leaflet&logoColor=white)](https://leafletjs.com/)
 [![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-c51a4a?style=for-the-badge&logo=Raspberry-Pi)](https://www.raspberrypi.com/)
 [![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)](https://www.arduino.cc/)
 [![serialport](https://img.shields.io/badge/-serialport-FFFF00?style=for-the-badge&logo=serialport&logoColor=white)](https://serialport.io/)
 [![GitLab CI](https://img.shields.io/badge/gitlab%20ci-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)](https://about.gitlab.com/resources/scaled-ci-cd/?utm_medium=cpc&utm_source=google&utm_campaign=singleappci_emea_pr_rsa_nb_exact_&utm_content=scaled-ci-cd_digital_x-pr_english_&&utm_term=ci%20cd&_bt=626050032843&_bk=ci%20cd&_bm=b&_bn=g&_bg=103866327354&gclid=Cj0KCQiAkMGcBhCSARIsAIW6d0D1Y3nJO2wh0tH5-NYqUGQ0qftov1pSSJQwPA3Z7piJ8Yc8Ex1IKLkaAiMiEALw_wcB)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-[![min.io](https://img.shields.io/badge/minio-%722F37?style=for-the-badge&logo=min.io&logoColor=722F37)](https://min.io/)
+[![min.io](https://img.shields.io/badge/minio-%00457C?style=for-the-badge&logo=min.io&logoColor=white)](https://min.io/)
 [![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://de.wikipedia.org/wiki/C%2B%2B)
 [![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white)](https://prometheus.io/)
 [![Grafana](https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white)](https://grafana.com/)
-[![Sentry](https://img.shields.io/badge/Sentry-%9400D3.svg?style=for-the-badge&logo=Sentry&logoColor=white)](https://sentry.io/)
-[![renovatebot](https://img.shields.io/badge/renovatebot-%3f888f.svg?style=for-the-badge&logo=renovatebot&logoColor=white)](https://docs.renovatebot.com/)
-[![Purgecss](https://img.shields.io/badge/Purgecss-%3f888f.svg?style=for-the-badge&logo=Purgecss&logoColor=white)](https://purgecss.com/)
+[![Sentry](https://img.shields.io/badge/Sentry-%00457C.svg?style=for-the-badge&logo=Sentry&logoColor=white)](https://sentry.io/)
+[![renovatebot](https://img.shields.io/badge/renovatebot-%00457C.svg?style=for-the-badge&logo=renovatebot&logoColor=white)](https://docs.renovatebot.com/)
+[![Purgecss](https://img.shields.io/badge/Purgecss-%00457C.svg?style=for-the-badge&logo=Purgecss&logoColor=white)](https://purgecss.com/)
 [![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)
 [![sonarqube](https://img.shields.io/badge/sonarqube-add8e6?style=for-the-badge&logo=sonarqube&logoColor=white)](https://www.sonarqube.org/)
 [![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/en/main)
@@ -186,7 +186,7 @@ For the time being, no changes will be made.
 ### Coming soon
 
 [![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
-[![Stripe](https://img.shields.io/badge/-stripe-%4B3263?style=for-the-badge&logo=stripe&logoColor=white)](https://stripe.com/)
+[![Stripe](https://img.shields.io/badge/-stripe-%00457C?style=for-the-badge&logo=stripe&logoColor=white)](https://stripe.com/)
 
 ## Introduction
 
