@@ -162,29 +162,31 @@ For the time being, no changes will be made.
 [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://www.javascript.com/)
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/download?gclid=Cj0KCQiA37KbBhDgARIsAIzce16YF-tHi0cfujV9iwI4m9iC1zlTmt7il2I-97BzOt8PvtOG8AlIApEaAuCaEALw_wcB)
-[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://developer.paypal.com/)
-<a href='https://github.com/speakeasyjs/speakeasy' target="_blank"><img alt='speakeasy' src='https://img.shields.io/badge/speakeasy-100000?style=for-the-badge&logo=speakeasy&logoColor=white&labelColor=961414&color=f95959'/></a>
-<a href='https://nodemailer.com/about/' target="_blank"><img alt='node mailer' src='https://img.shields.io/badge/node mailer-100000?style=for-the-badge&logo=nodemailer&logoColor=white&labelColor=961414&color=233142'/></a>
-<a href='https://leafletjs.com/' target="_blank"><img alt='Leaflet' src='https://img.shields.io/badge/Leaflet-100000?style=for-the-badge&logo=Leaflet&logoColor=white&labelColor=961414&color=233142'/></a>
-[![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)](https://www.raspberrypi.com/)
+[![PayPal](https://img.shields.io/badge/speakeasyjs-00457C?style=for-the-badge&logo=speakeasyjs&logoColor=white)](https://developer.paypal.com/)
+[![SpeakeasyJS](https://img.shields.io/badge/speakeasyjs-00457C?style=for-the-badge&logo=speakeasyjs&logoColor=white)](https://github.com/speakeasyjs/speakeasy)
+[![nodemailer](https://img.shields.io/badge/nodemailer-89CFF0?style=for-the-badge&logo=nodemailer&logoColor=white)](https://nodemailer.com/about/)
+[![LeafletJS](https://img.shields.io/badge/Leaflet-32CD32?style=for-the-badge&logo=Leaflet&logoColor=white)](https://leafletjs.com/)
+[![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-c51a4a?style=for-the-badge&logo=Raspberry-Pi)](https://www.raspberrypi.com/)
 [![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)](https://www.arduino.cc/)
-<a href='https://serialport.io/' target="_blank"><img alt='Node SerialPort' src='https://img.shields.io/badge/serialport-100000?style=for-the-badge&logo=serialport&logoColor=white&labelColor=961414&color=233142'/></a>
+[![serialport](https://img.shields.io/badge/-serialport-FFFF00?style=for-the-badge&logo=serialport&logoColor=white)](https://serialport.io/)
 [![GitLab CI](https://img.shields.io/badge/gitlab%20ci-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)](https://about.gitlab.com/resources/scaled-ci-cd/?utm_medium=cpc&utm_source=google&utm_campaign=singleappci_emea_pr_rsa_nb_exact_&utm_content=scaled-ci-cd_digital_x-pr_english_&&utm_term=ci%20cd&_bt=626050032843&_bk=ci%20cd&_bm=b&_bn=g&_bg=103866327354&gclid=Cj0KCQiAkMGcBhCSARIsAIW6d0D1Y3nJO2wh0tH5-NYqUGQ0qftov1pSSJQwPA3Z7piJ8Yc8Ex1IKLkaAiMiEALw_wcB)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-<a href='https://min.io/' target="_blank"><img alt='Leaflet' src='https://img.shields.io/badge/minio-100000?style=for-the-badge&logo=minio&logoColor=white&labelColor=961414&color=233142'/></a>
+[![min.io](https://img.shields.io/badge/minio-%722F37?style=for-the-badge&logo=min.io&logoColor=722F37)](https://min.io/)
 [![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://de.wikipedia.org/wiki/C%2B%2B)
 [![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white)](https://prometheus.io/)
 [![Grafana](https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white)](https://grafana.com/)
-<a href='https://sentry.io/' target="_blank"><img alt='Sentry' src='https://img.shields.io/badge/sentry.io-100000?style=for-the-badge&logo=sentry&logoColor=white&labelColor=961414&color=233142'/></a>
-<a href='https://docs.renovatebot.com/' target="_blank"><img alt='renovatebot' src='https://img.shields.io/badge/renovatebot-100000?style=for-the-badge&logo=renovatebot&logoColor=white&labelColor=961414&color=233142'/></a>
-<a href='https://purgecss.com/' target="_blank"><img alt='Leaflet' src='https://img.shields.io/badge/Purgecss-100000?style=for-the-badge&logo=purgecss&logoColor=white&labelColor=961414&color=233142'/></a>
+[![Sentry](https://img.shields.io/badge/Sentry-%9400D3.svg?style=for-the-badge&logo=Sentry&logoColor=white)](https://sentry.io/)
+[![renovatebot](https://img.shields.io/badge/renovatebot-%3f888f.svg?style=for-the-badge&logo=renovatebot&logoColor=white)](https://docs.renovatebot.com/)
+[![Purgecss](https://img.shields.io/badge/Purgecss-%3f888f.svg?style=for-the-badge&logo=Purgecss&logoColor=white)](https://purgecss.com/)
 [![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)
-<a href='https://www.sonarqube.org/' target="_blank"><img alt='sonarqube' src='https://img.shields.io/badge/sonarqube-100000?style=for-the-badge&logo=sonarqube&logoColor=white&labelColor=961414&color=233142'/></a>
+[![sonarqube](https://img.shields.io/badge/sonarqube-add8e6?style=for-the-badge&logo=sonarqube&logoColor=white)](https://www.sonarqube.org/)
 [![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/en/main)
 [![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
 
 ### Coming soon
+
 [![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
+[![Stripe](https://img.shields.io/badge/-stripe-%4B3263?style=for-the-badge&logo=stripe&logoColor=white)](https://stripe.com/)
 
 ## Introduction
 
@@ -410,6 +412,72 @@ The plan area can be divided into the following two areas.
     </ul>
 </details>
 
+#### MoSCoW-Priorisierung
+
+<details>
+  <summary>Must-have</summary>
+  <li> <input type="checkbox" checked> Custom user
+    <ul>
+      <li> <input type="checkbox" checked/> Sign-Up</li>
+      <li> <input type="checkbox" checked/> Sign-In</li>
+      <li> <input type="checkbox" checked/> Store Passwort Safe in a Database</li>
+    </ul>
+  <li><input type="checkbox" checked/>Rent a scooter</li>
+  <li><input type="checkbox" checked/>Calculate duration and cost from the ride</li>
+  <li><input type="checkbox" checked/>Server Monitoring
+    <ul>
+      <li><input type="checkbox" checked/>Prometheus</li>
+      <li><input type="checkbox" checked/>Grafana</li>
+    </ul>
+  </li>
+    <li><input type="checkbox" checked/>Error Monitoring
+    <ul>
+      <li><input type="checkbox" checked/>Sentry</li>
+    </ul>
+  </li>
+  </li>
+</details>
+
+<details>
+  	<summary>Should-have</summary>
+  	  <li><input type="checkbox" checked/>Slated and Hashed</li>
+  	  <li><input type="checkbox" checked/>Two-factor authentication</li>
+  	  <li><input type="checkbox" checked/>Store data in Local Web Storage</li>
+  	  <li><input type="checkbox" checked/>A world map that searches for the current position
+        <ul>
+          <li><input type="checkbox" checked/>View live location on the map, with the profile picture</li>
+  	      <li><input type="checkbox" checked/>View scooters on the map</li>
+       </ul>
+      </li>
+      <li><input type="checkbox" checked/>Invoice in the app</li>
+      <li><input type="checkbox" checked/>Add credit with a PayPal account</li>
+      <li><input type="checkbox" checked/>Dependecy Check
+        <ul>
+  	      <li><input type="checkbox" checked/>Renovate Bot</li>
+        </ul>
+      </li>
+</details>
+
+<details>
+  	<summary>Could-have</summary>
+  	  <li><input type="checkbox" checked/>Automated and personalized emails
+        <ul>
+  	      <li><input type="checkbox" checked/>By creating a Account</li>
+  	      <li><input type="checkbox" checked/>New Billing arrives</li>
+        </ul>
+      </li>
+      <li><input type="checkbox"/>Add Stripe as a payment method</li>
+      <li><input type="checkbox"/>Diffrent Providers with Keycloak</li>
+      <li><input type="checkbox" checked/>Check Code Qualtity
+        <ul>
+  	      <li><input type="checkbox" checked/>SonarQube</li>
+  	      <li><input type="checkbox" checked/>EsLint</li>
+        </ul>
+      </li>
+</details>
+
+##### Wont-have
+
 ### Create
 
 ### Verify
@@ -554,7 +622,7 @@ The project was financed by individual sponsors plus the company's own capital. 
         - [x] A 2 factor token is automatically generated, the user has to scan this token at the first login, as well as enter the token.
     - [x] Password is sallted and hashed and stored in the database.
 - [x] Log in with a specific user.
-- [x] It is always logged in with a token
+- [x] Store data in Local Web Storage 
 - [x] Automated and personalized emails 
     - [x] By creating a Account
     - [x] New Billing arrives
@@ -563,7 +631,7 @@ The project was financed by individual sponsors plus the company's own capital. 
     - [x] View scooters on the map
 <!-- - [x] Add and save payment methods. -->
 - [x] Rent a scooter
-- [x] Calculate duration and cost
+- [x] Calculate duration and cost from the ride
 - [x] Invoice in the app, as well as in by email
 - [x] Add credit, e.g. with a PayPal account
 
