@@ -204,6 +204,7 @@ For us it was possible to connect this with the first block where the sensor pac
 [![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
 [![Stripe](https://img.shields.io/badge/-stripe-%4B3263?style=for-the-badge&logo=stripe&logoColor=white)](https://stripe.com/)
 [![Vault](https://img.shields.io/badge/Vault-%2320232a.svg?style=for-the-badge&logo=Vault&logoColor=%2361DAFB)](https://www.vaultproject.io/)
+[![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)](https://www.terraform.io/)
 
 ## Introduction
 
@@ -460,6 +461,7 @@ The plan area can be divided into the following two areas.
 - [x] Dependecy Check
   - [x] Renovate Bot
 - [x] Mobile Client Version
+- [ ] Automate Rollout use Terraform
 
 ##### Could-have
 
