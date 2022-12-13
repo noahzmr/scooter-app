@@ -1,10 +1,3 @@
--- --------------------------------------------------------
--- Host:                         localhost
--- Server Version:               10.8.3-MariaDB - mariadb.org binary distribution
--- Server Betriebssystem:        Win64
--- HeidiSQL Version:             11.3.0.6295
--- --------------------------------------------------------
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
@@ -214,17 +207,35 @@ CREATE TABLE IF NOT EXISTS `user` (
   `MobileNr` varchar(50) DEFAULT NULL,
   `Birthday` varchar(50) DEFAULT NULL,
   `role` int(11) DEFAULT 1,
+  `picture` int(11) DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `Email` (`Email`),
   KEY `FK_user_role` (`role`),
-  CONSTRAINT `FK_user_role` FOREIGN KEY (`role`) REFERENCES `role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `FK_user_users_pictures` (`picture`),
+  CONSTRAINT `FK_user_role` FOREIGN KEY (`role`) REFERENCES `role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_user_users_pictures` FOREIGN KEY (`picture`) REFERENCES `users_pictures` (`id`) ON DELETE SET NULL ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4;
 
 -- Exportiere Daten aus Tabelle scooter-gmbh.user: ~1 rows (ungefähr)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`user_id`, `name`, `Email`, `Gender`, `MobileNr`, `Birthday`, `role`) VALUES
-	(79, 'Noah zeumer', 'noahzeumer@gmail.com', 'male', '491515151', '2002-03-25', 1);
+INSERT INTO `user` (`user_id`, `name`, `Email`, `Gender`, `MobileNr`, `Birthday`, `role`, `picture`) VALUES
+	(79, 'Noah zeumer', 'noahzeumer@gmail.com', 'male', '491515151', '2002-03-25', 1, NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+
+-- Exportiere Struktur von Tabelle scooter-gmbh.users_pictures
+CREATE TABLE IF NOT EXISTS `users_pictures` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `filename` varchar(50) NOT NULL,
+  `content_type` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK__user` (`user_id`),
+  CONSTRAINT `FK__user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Exportiere Daten aus Tabelle scooter-gmbh.users_pictures: ~0 rows (ungefähr)
+/*!40000 ALTER TABLE `users_pictures` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users_pictures` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
