@@ -171,13 +171,13 @@ For the time being, no changes will be made.
 [![serialport](https://img.shields.io/badge/-serialport-FFFF00?style=for-the-badge&logo=serialport&logoColor=white)](https://serialport.io/)
 [![GitLab CI](https://img.shields.io/badge/gitlab%20ci-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)](https://about.gitlab.com/resources/scaled-ci-cd/?utm_medium=cpc&utm_source=google&utm_campaign=singleappci_emea_pr_rsa_nb_exact_&utm_content=scaled-ci-cd_digital_x-pr_english_&&utm_term=ci%20cd&_bt=626050032843&_bk=ci%20cd&_bm=b&_bn=g&_bg=103866327354&gclid=Cj0KCQiAkMGcBhCSARIsAIW6d0D1Y3nJO2wh0tH5-NYqUGQ0qftov1pSSJQwPA3Z7piJ8Yc8Ex1IKLkaAiMiEALw_wcB)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-[![min.io](https://img.shields.io/badge/minio-%00457C?style=for-the-badge&logo=min.io&logoColor=white)](https://min.io/)
+[![min.io](https://img.shields.io/badge/minio-%722F37?style=for-the-badge&logo=min.io&logoColor=722F37)](https://min.io/)
 [![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://de.wikipedia.org/wiki/C%2B%2B)
 [![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white)](https://prometheus.io/)
 [![Grafana](https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white)](https://grafana.com/)
-[![Sentry](https://img.shields.io/badge/Sentry-%00457C.svg?style=for-the-badge&logo=Sentry&logoColor=white)](https://sentry.io/)
-[![renovatebot](https://img.shields.io/badge/renovatebot-%00457C.svg?style=for-the-badge&logo=renovatebot&logoColor=white)](https://docs.renovatebot.com/)
-[![Purgecss](https://img.shields.io/badge/Purgecss-%00457C.svg?style=for-the-badge&logo=Purgecss&logoColor=white)](https://purgecss.com/)
+[![Sentry](https://img.shields.io/badge/Sentry-%9400D3.svg?style=for-the-badge&logo=Sentry&logoColor=white)](https://sentry.io/)
+[![renovatebot](https://img.shields.io/badge/renovatebot-%3f888f.svg?style=for-the-badge&logo=renovatebot&logoColor=white)](https://docs.renovatebot.com/)
+[![Purgecss](https://img.shields.io/badge/Purgecss-%3f888f.svg?style=for-the-badge&logo=Purgecss&logoColor=white)](https://purgecss.com/)
 [![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)
 [![sonarqube](https://img.shields.io/badge/sonarqube-add8e6?style=for-the-badge&logo=sonarqube&logoColor=white)](https://www.sonarqube.org/)
 [![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/en/main)
@@ -186,7 +186,8 @@ For the time being, no changes will be made.
 ### Coming soon
 
 [![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
-[![Stripe](https://img.shields.io/badge/-stripe-%00457C?style=for-the-badge&logo=stripe&logoColor=white)](https://stripe.com/)
+[![Stripe](https://img.shields.io/badge/-stripe-%4B3263?style=for-the-badge&logo=stripe&logoColor=white)](https://stripe.com/)
+[![Vault](https://img.shields.io/badge/Vault-%2320232a.svg?style=for-the-badge&logo=Vault&logoColor=%2361DAFB)](https://www.vaultproject.io/)
 
 ## Introduction
 
@@ -414,67 +415,47 @@ The plan area can be divided into the following two areas.
 
 #### MoSCoW-Priorisierung
 
-<details>
-  <summary>Must-have</summary>
-  <li> <input type="checkbox" checked> Custom user
-    <ul>
-      <li> <input type="checkbox" checked/> Sign-Up</li>
-      <li> <input type="checkbox" checked/> Sign-In</li>
-      <li> <input type="checkbox" checked/> Store Passwort Safe in a Database</li>
-    </ul>
-  <li><input type="checkbox" checked/>Rent a scooter</li>
-  <li><input type="checkbox" checked/>Calculate duration and cost from the ride</li>
-  <li><input type="checkbox" checked/>Server Monitoring
-    <ul>
-      <li><input type="checkbox" checked/>Prometheus</li>
-      <li><input type="checkbox" checked/>Grafana</li>
-    </ul>
-  </li>
-    <li><input type="checkbox" checked/>Error Monitoring
-    <ul>
-      <li><input type="checkbox" checked/>Sentry</li>
-    </ul>
-  </li>
-  </li>
-</details>
+##### Must-have
 
-<details>
-  	<summary>Should-have</summary>
-  	  <li><input type="checkbox" checked/>Slated and Hashed</li>
-  	  <li><input type="checkbox" checked/>Two-factor authentication</li>
-  	  <li><input type="checkbox" checked/>Store data in Local Web Storage</li>
-  	  <li><input type="checkbox" checked/>A world map that searches for the current position
-        <ul>
-          <li><input type="checkbox" checked/>View live location on the map, with the profile picture</li>
-  	      <li><input type="checkbox" checked/>View scooters on the map</li>
-       </ul>
-      </li>
-      <li><input type="checkbox" checked/>Invoice in the app</li>
-      <li><input type="checkbox" checked/>Add credit with a PayPal account</li>
-      <li><input type="checkbox" checked/>Dependecy Check
-        <ul>
-  	      <li><input type="checkbox" checked/>Renovate Bot</li>
-        </ul>
-      </li>
-</details>
+- [x] Custom user
+  - [x]  Sign-Up
+  - [x]  Sign-In
+  - [x]  Store Passwort Safe in a Database
+- [x] Rent a scooter
+- [x] Calculate duration and cost from the ride
+- [x] Server Monitoring
+  - [x] Prometheus
+  - [x] Grafana
+- [x] Error Monitoring
+  - [x] Sentry
+- [x] Automate Docker Build
+- [x] Automate Deployment
 
-<details>
-  	<summary>Could-have</summary>
-  	  <li><input type="checkbox" checked/>Automated and personalized emails
-        <ul>
-  	      <li><input type="checkbox" checked/>By creating a Account</li>
-  	      <li><input type="checkbox" checked/>New Billing arrives</li>
-        </ul>
-      </li>
-      <li><input type="checkbox"/>Add Stripe as a payment method</li>
-      <li><input type="checkbox"/>Diffrent Providers with Keycloak</li>
-      <li><input type="checkbox" checked/>Check Code Qualtity
-        <ul>
-  	      <li><input type="checkbox" checked/>SonarQube</li>
-  	      <li><input type="checkbox" checked/>EsLint</li>
-        </ul>
-      </li>
-</details>
+##### Should-have
+
+- [x] Slated and Hashed
+- [x] Two-factor authentication
+- [x] Store data in Local Web Storage
+- [x] A world map that searches for the current position
+  - [x] View live location on the map, with the profile picture
+  - [x] View scooters on the map
+- [x] Invoice in the app
+- [x] Add credit with a PayPal account
+- [x] Dependecy Check
+  - [x] Renovate Bot
+
+##### Could-have
+
+- [x] Automated and personalized emails
+   - [x] By creating a Account
+   - [x] New Billing arrives
+- [ ] Add Stripe as a payment method
+- [ ] Diffrent Providers with Keycloak
+- [x] Check Code Qualtity
+  - [x] SonarQube
+  - [x] EsLint
+- [ ] Secret Managment
+  - [ ] Vault
 
 ##### Wont-have
 
