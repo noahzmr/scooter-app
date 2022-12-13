@@ -84,7 +84,13 @@
             <li><a href="#package">Package</a></li>
             <li><a href="#release">Release</a></li>
             <li><a href="#configure">Configure</a></li>
-            <li><a href="#monitor">Monitor</a></li>
+            <li><a href="#monitor">Monitor</a>
+              <ul>
+                <li><a href="#sentry">Sentry</a></li>
+                <li><a href="#prometheus">Prometheus</a></li>
+                <li><a href="#grafana">Grafana</a></li>
+              </ul>
+            </li>
         </ul>
     </li>
     <li>
@@ -483,8 +489,12 @@ The plan area can be divided into the following two areas.
 
 ### Monitor
 
-To monitor the app we use `prometheus.io` and the whole thing is made visible with the help of `grafana`.
-In addition, Sentry will be integrated.
+#### Sentry
+
+#### Prometheus
+
+#### Grafana
+
 
 ### Pipline
 
