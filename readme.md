@@ -67,7 +67,18 @@
     <li>
         <a href="#devops">DevOps</a>
         <ul>
-            <li><a href="#plan">Plan</a></li>
+            <li><a href="#plan">Plan</a>
+              <ul>
+                <li><a href="#moscow-priorisierung">MoSCoW-Priorisierung</a>
+                  <ul>
+                    <li><a href="#must-have">Must-have</a></li>
+                    <li><a href="#should-have">Should-have</a></li>
+                    <li><a href="#could-have">Could-have</a></li>
+                    <li><a href="#wont-have">Wont-have</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
             <li><a href="#create">Create</a></li>
             <li><a href="#verify">Verify</a></li>
             <li><a href="#package">Package</a></li>
@@ -443,6 +454,7 @@ The plan area can be divided into the following two areas.
 - [x] Add credit with a PayPal account
 - [x] Dependecy Check
   - [x] Renovate Bot
+- [x] Mobile Client Version
 
 ##### Could-have
 
