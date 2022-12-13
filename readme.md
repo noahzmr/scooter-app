@@ -473,8 +473,13 @@ The plan area can be divided into the following two areas.
   - [x] EsLint
 - [ ] Secret Managment
   - [ ] Vault
+- [x] Remove unused CSS for the build
+  - [x] PurgeCss
 
 ##### Wont-have
+
+- No NPM Packaging 
+  - Just using Docker
 
 ### Create
 
