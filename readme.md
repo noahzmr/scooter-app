@@ -198,10 +198,11 @@ For us it was possible to connect this with the first block where the sensor pac
 [![sonarqube](https://img.shields.io/badge/sonarqube-add8e6?style=for-the-badge&logo=sonarqube&logoColor=white)](https://www.sonarqube.org/)
 [![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/en/main)
 [![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
+[![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
+[![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
 
 ### Coming soon
 
-[![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
 [![Stripe](https://img.shields.io/badge/-stripe-%4B3263?style=for-the-badge&logo=stripe&logoColor=white)](https://stripe.com/)
 [![Vault](https://img.shields.io/badge/Vault-%2320232a.svg?style=for-the-badge&logo=Vault&logoColor=%2361DAFB)](https://www.vaultproject.io/)
 [![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)](https://www.terraform.io/)

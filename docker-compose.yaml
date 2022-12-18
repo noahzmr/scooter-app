@@ -42,75 +42,75 @@ services:
       - ./backend/.env
 
 
-  # Start the Backendserver, who hosted the frontend
-  fullstack:
-    image: docker.autonubil.net/schule/scootec-gmbh/backend
-    restart: always
-    ports:
-      - 10000:10000
-    stdin_open: true
-    tty: true
-    env_file:
-      - ./backend/.env
-    depends_on:
-      - db
-      - adminer
-    networks:
-      - scooter
+  # # Start the Backendserver, who hosted the frontend
+  # fullstack:
+  #   image: docker.autonubil.net/schule/scootec-gmbh/backend
+  #   restart: always
+  #   ports:
+  #     - 10000:10000
+  #   stdin_open: true
+  #   tty: true
+  #   env_file:
+  #     - ./backend/.env
+  #   depends_on:
+  #     - db
+  #     - adminer
+  #   networks:
+  #     - scooter
 
-    # Prometheus
+  #   # Prometheus
   
-  # Prometheus
-  prometheus:
-    image: prom/prometheus
-    restart: always
-    ports:
-      - 9090:9090
-    stdin_open: true
-    tty: true
-    volumes:
-      - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-    depends_on:
-      - db
-      - adminer
-      - fullstack
-    networks:
-      - scooter
+  # # Prometheus
+  # prometheus:
+  #   image: prom/prometheus
+  #   restart: always
+  #   ports:
+  #     - 9090:9090
+  #   stdin_open: true
+  #   tty: true
+  #   volumes:
+  #     - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+  #   depends_on:
+  #     - db
+  #     - adminer
+  #     - fullstack
+  #   networks:
+  #     - scooter
 
-  # Grafana 
-  grafana:
-    image: grafana/grafana
-    restart: always
-    ports:
-      - 3000:3000
-    stdin_open: true
-    tty: true
-    env_file:
-      - ./backend/.env
-    volumes:
-      - ./config/grafana/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
-      - ./config/grafana/dashboards:/etc/grafana/provisioning/dashboards
-    depends_on:
-      - prometheus
-    networks:
-      - scooter 
+  # # Grafana 
+  # grafana:
+  #   image: grafana/grafana
+  #   restart: always
+  #   ports:
+  #     - 3000:3000
+  #   stdin_open: true
+  #   tty: true
+  #   env_file:
+  #     - ./backend/.env
+  #   volumes:
+  #     - ./config/grafana/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
+  #     - ./config/grafana/dashboards:/etc/grafana/provisioning/dashboards
+  #   depends_on:
+  #     - prometheus
+  #   networks:
+  #     - scooter 
 
-  # Start the Backendserver, who hosted the frontend
-  scooterOne:
-    image: docker.autonubil.net/schule/scootec-gmbh/scooter-hardware/node-server
-    restart: always
-    ports:
-      - 9100:9100
-    stdin_open: true
-    tty: true
-    env_file:
-      - ./backend/.env
-    depends_on:
-      - db
-      - adminer
-      - fullstack
-    networks:
-      - scooter
+  # # Start the Backendserver, who hosted the frontend
+  # scooterOne:
+  #   image: docker.autonubil.net/schule/scootec-gmbh/scooter-hardware/node-server
+  #   restart: always
+  #   ports:
+  #     - 9100:9100
+  #   stdin_open: true
+  #   tty: true
+  #   env_file:
+  #     - ./backend/.env
+  #   depends_on:
+  #     - db
+  #     - adminer
+  #     - fullstack
+  #   networks:
+  #     - scooter
       
 networks:
   scooter:
