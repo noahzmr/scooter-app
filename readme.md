@@ -96,6 +96,7 @@
     <li>
         <a href="#business-canvas">Business Canvas</a>
         <ul>
+        <li><a href="#vision-board">Vision Board</a></li>
             <li>
                 <a href="#key-partners">Key Partners</a>
                 <ul>
@@ -450,8 +451,8 @@ The plan area can be divided into the following two areas.
   - [x] Sentry
 - [x] Automate Docker Build
 - [x] Automate Deployment
-- [ ] You have developed a product vision for your software.
-- [ ] You have defined stories/tasks for your software that are to be implemented
+- [x] You have developed a product [vision](#vision-board) for your software.
+- [x] You have defined stories/tasks for your software that are to be implemented
 - [x] You collect data from at least one data source
 - [x] The data is processed and interpreted
 - [x] The data is stored in log files or a database
@@ -572,11 +573,20 @@ It automatically runs once a day, one pass, if successful a Docker image is buil
 
 ### Test
 
+#### Sign-Up
+
+#### Sign-In
+
+#### Add credits
+
+#### Delete User
+
 ## Business Canvas
 
 ### Vision Board
 
 ![Visonboard](img/vision-board-scoter.png)
+
 ### Key Partners
 
 Our business partners are the Raspberry Pi Foundation, Arduino as well as Elegoo.
