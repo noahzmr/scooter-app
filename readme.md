@@ -449,6 +449,15 @@ The plan area can be divided into the following two areas.
   - [x] Sentry
 - [x] Automate Docker Build
 - [x] Automate Deployment
+- [ ] You have developed a product vision for your software.
+- [ ] You have defined stories/tasks for your software that are to be implemented (Note: It is not about defining right at the beginning what you are going to create, but a "reasonable" backlog. You then plan from sprint to sprint).
+- [x] You collect data from at least one data source
+- [x] The data is processed and interpreted
+- [ ] The data is stored in log files or a database
+- [x] You have designed the program to be readable and understandable, especially by using meaningful names of variables and functions and meaningful comments
+- [x] You have tested the program for the implemented requirements
+- [ ] You have created a class diagram or distribution diagram of your software
+- [x] You have implemented at least one automated test
 
 ##### Should-have
 
@@ -464,6 +473,14 @@ The plan area can be divided into the following two areas.
   - [x] Renovate Bot
 - [x] Mobile Client Version
 - [ ] Automate Rollout use Terraform
+- [x] You capture data from more than one data source
+- [x] The data is processed and linked in a meaningful way
+- [x] The data is made available via a medium
+- [x] You have structured your program well by meaningful modules / classes
+- [x] The program is readable, understandable and easily extendable by:
+  - [x] A good program structure,
+  - [x] self-explanatory program code, meaningful names of variables and functions as well as meaningful comments
+- [x] You have implemented at least three automated tests
 
 ##### Could-have
 
@@ -479,6 +496,10 @@ The plan area can be divided into the following two areas.
   - [ ] Vault
 - [x] Remove unused CSS for the build
   - [x] PurgeCss
+- [x] You have applied basics of object-oriented programming.
+- [x] Selected data is stored in a database or other useful storage medium
+- [x] Data is delivered via heterogeneous media
+- [ ] You have implemented at least five automated tests
 
 ##### Wont-have
 
