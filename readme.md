@@ -12,7 +12,7 @@
     <a href="https://github.com/noahzmr/scooter-app"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://chat.noerkelit.online/">View Live Demo</a>
+    <a href="https://scooter.noerkelit.online/">View Live Demo</a>
     ·
     <a href="https://github.com/noahzmr/scooter-app/issues">Report Bug</a>
     ·
@@ -473,7 +473,7 @@ The plan area can be divided into the following two areas.
 - [x] Dependecy Check
   - [x] Renovate Bot
 - [x] Mobile Client Version
-- [ ] Automate Rollout use Terraform
+- [x] Automate Rollout use Terraform
 - [x] You capture data from more than one data source
 - [x] The data is processed and linked in a meaningful way
 - [x] The data is made available via a medium
@@ -507,17 +507,19 @@ The plan area can be divided into the following two areas.
 - No NPM Packaging 
   - Just using Docker
 
-### Create
-
-### Verify
-
-### Package
-
-### Release
-
-### Configure
-
 ### Monitor
+
+In our case, monitoring consists of four parts:
+- [Sentry](#sentry)
+- [Prometheus](#prometheus)
+- [Grafana](#grafana)
+- [SonarQube](#sonar)
+
+All important information is monitored, such as:
+- Error messages
+- Server load
+- Data from Scooter
+- Quality of the software
 
 #### Sentry
 
@@ -567,14 +569,6 @@ It automatically runs once a day, one pass, if successful a Docker image is buil
 | New Code | Displays only things that were added during the last pass |
 | Quality gates | Quality gates enforce a quality policy in your organization by answering one question: is my project ready for release? |
 
-#### Docker Build
-
-#### Rollout on a server
-
-Docker -> Build docker Container and Publish 
-Postbuild -> Run Purgecss
-prometheus -> get metrics about the Server, and Custom
-Sentry -> error monitoring
 
 ## Business Canvas
 
