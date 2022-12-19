@@ -331,7 +331,7 @@ This can show more accurate details about the scooters.
 
 ##### Logical Network Topology
 
-![Logical Network Topology](img/strucktogramm-network.svg)
+![Logical Network Topology](img/strucktogramm-network.svg.png)
 
 #### Cloud & Data Analytics
 
@@ -454,7 +454,7 @@ The plan area can be divided into the following two areas.
 - [ ] You have defined stories/tasks for your software that are to be implemented
 - [x] You collect data from at least one data source
 - [x] The data is processed and interpreted
-- [ ] The data is stored in log files or a database
+- [x] The data is stored in log files or a database
 - [x] You have designed the program to be readable and understandable, especially by using meaningful names of variables and functions and meaningful comments
 - [x] You have tested the program for the implemented requirements
 - [x] You have created a class diagram or [distribution diagram](#distribution-diagram) of your software
@@ -570,8 +570,13 @@ It automatically runs once a day, one pass, if successful a Docker image is buil
 | Quality gates | Quality gates enforce a quality policy in your organization by answering one question: is my project ready for release? |
 
 
+### Test
+
 ## Business Canvas
 
+### Vision Board
+
+![Visonboard](img/vision-board-scoter.png)
 ### Key Partners
 
 Our business partners are the Raspberry Pi Foundation, Arduino as well as Elegoo.
@@ -752,7 +757,7 @@ Meaning of the colors:
 
 #### Distribution diagram
 
-![Distribution](img/verteilerdiagramm-scooter.drawio.svg)
+![Distribution](img/verteilerdiagramm-scooter.drawio.png)
 
 ### Flowdiagramm
 
