@@ -164,10 +164,11 @@
 
 ## About
 
-This is a school assignment that was created in two blocks, each of which was three weeks long, 
+This is a school assignment that was created in three blocks, each of which was three weeks long, 
 The scenario from the first block was to write a script that calculates the travel costs for a scooter rental.
 It was up to us if we wanted to keep it a pure terminal application or if we wanted to add a UI to it.
 In the next block, live data should be read out with the help of an Arduino and a Raspberry Pi, and a business plan should be created.
+In the last block we should cover the topic of DevOps, where we use pipline, monitoring, testing and build processes.
 For us it was possible to connect this with the first block where the sensor package represents a scooter.
 
 ### Built With
@@ -210,7 +211,7 @@ For us it was possible to connect this with the first block where the sensor pac
 ## Introduction
 
 ### App
-We have developed a web application for the company ScooTec GmbH.
+We have developed a web application for the immagine company "ScooTec GmbH".
 This is intended for the end user UI
 Every user can register on the web page as well.
 After registration the customer will receive an email and 20.00 starting credit will be added to his account.
@@ -257,9 +258,9 @@ As well as a `.env` file in `backend` path that looks like this:
 
 ```
 # DB
-DB_HOST=*************
-DB_PORT=******
-DB_USER=****
+DB_HOST=0.0.0.0
+DB_PORT3306
+DB_USER=root
 DB_PASSWORD=*************
 DB_DATABASE=scooter-gmbh
 
@@ -510,9 +511,45 @@ The plan area can be divided into the following two areas.
 
 ### Pipline
 
-Sonar -> Check Code Quality
+We currently use four pipelines, which cover the complete flow from quality testing to roll-out.
+These would be: 
+- [Renovate](#renovate)
+- [Sonar](#sonar)
+- [Docker Build](#docker-build) 
+- [Rollout on a server](#rollout-on-a-server)
+
+#### Renovate
+
+Renovate checks for new software packages on each run, it creates an issue based on this. Renovate also checks if the newer version is compatible with the software and creates a merge request.
+
+![Ci Renovate](img/ci-renovate.png)
+![Ci Renovate](img/ci-renovate-1.png)
+![Ci Renovate](img/ci-renovate-2.png)
+
+#### Sonar
+
+SonarQube is a self-managed, automatic code review tool that systematically helps you deliver clean code
+It automatically runs once a day, one pass, if successful a Docker image is built and published. The piepline can also be triggered manually.
+
+![Ci Sonar](img/ci-sonar.png)
+![Ci Sonar](img/ci-sonar-2.png)
+![Ci Sonar](img/ci-sonar-3.png)
+![Ci Sonar](img/ci-sonar-4.png)
+
+| What? | Short description |
+| ----- | ----------------- |
+| Bugs  | A coding mistake that can lead to an error or unexpected behavior at runtime. |
+| Vulnerability | A point in your code that's open to attack. | 
+| Code Smell | A maintainability issue that makes your code confusing and difficult to maintain. |
+| Security hotspots | A security hotspot highlights a security-sensitive piece of code that the developer needs to review. Upon review, you'll either find there is no threat or you need to apply a fix to secure the code. |
+| New Code | Displays only things that were added during the last pass |
+| Quality gates | Quality gates enforce a quality policy in your organization by answering one question: is my project ready for release? |
+
+#### Docker Build
+
+#### Rollout on a server
+
 Docker -> Build docker Container and Publish 
-Renovat -> Search for newer dependencies
 Postbuild -> Run Purgecss
 prometheus -> get metrics about the Server, and Custom
 Sentry -> error monitoring
