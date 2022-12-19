@@ -331,7 +331,7 @@ This can show more accurate details about the scooters.
 
 ##### Logical Network Topology
 
-![Logical Network Topology](img/strucktogramm-network.svg.svg)
+![Logical Network Topology](img/strucktogramm-network.svg)
 
 #### Cloud & Data Analytics
 
