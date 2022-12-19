@@ -202,12 +202,12 @@ For us it was possible to connect this with the first block where the sensor pac
 [![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
 [![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
 [![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
+[![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)](https://www.terraform.io/)
 
 ### Coming soon
 
 [![Stripe](https://img.shields.io/badge/-stripe-%4B3263?style=for-the-badge&logo=stripe&logoColor=white)](https://stripe.com/)
 [![Vault](https://img.shields.io/badge/Vault-%2320232a.svg?style=for-the-badge&logo=Vault&logoColor=%2361DAFB)](https://www.vaultproject.io/)
-[![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)](https://www.terraform.io/)
 
 ## Introduction
 
@@ -457,7 +457,7 @@ The plan area can be divided into the following two areas.
 - [ ] The data is stored in log files or a database
 - [x] You have designed the program to be readable and understandable, especially by using meaningful names of variables and functions and meaningful comments
 - [x] You have tested the program for the implemented requirements
-- [ ] You have created a class diagram or distribution diagram of your software
+- [x] You have created a class diagram or [distribution diagram](#distribution-diagram) of your software
 - [x] You have implemented at least one automated test
 
 ##### Should-have
@@ -765,194 +765,6 @@ Meaning of the colors:
 #### ScooTec GmbH Website
 
 ![Flowdiagramm](img/strucktogramm-flowdiagram.png)
--- --------------------------------------------------------
--- Host:                         localhost
--- Server Version:               10.10.2-MariaDB-1:10.10.2+maria~ubu2204 - mariadb.org binary distribution
--- Server Betriebssystem:        debian-linux-gnu
--- HeidiSQL Version:             11.3.0.6295
--- --------------------------------------------------------
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
--- Exportiere Datenbank Struktur für scooter-gmbh
-CREATE DATABASE IF NOT EXISTS `scooter-gmbh` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
-USE `scooter-gmbh`;
-
--- Exportiere Struktur von Tabelle scooter-gmbh.billing
-CREATE TABLE IF NOT EXISTS `billing` (
-  `billing_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `ride_id` int(11) NOT NULL,
-  `cost` float DEFAULT NULL,
-  PRIMARY KEY (`billing_id`),
-  KEY `FK_billing_ride` (`ride_id`),
-  KEY `FK_billing_user` (`user_id`),
-  CONSTRAINT `FK_billing_ride` FOREIGN KEY (`ride_id`) REFERENCES `ride` (`ride_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `FK_billing_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Daten Export vom Benutzer nicht ausgewählt
-
--- Exportiere Struktur von Tabelle scooter-gmbh.credit
-CREATE TABLE IF NOT EXISTS `credit` (
-  `credit_id` int(20) NOT NULL AUTO_INCREMENT,
-  `quantity` float NOT NULL,
-  `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`credit_id`),
-  KEY `FK_credit_user` (`user_id`),
-  CONSTRAINT `FK_credit_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Daten Export vom Benutzer nicht ausgewählt
-
--- Exportiere Struktur von Tabelle scooter-gmbh.login
-CREATE TABLE IF NOT EXISTS `login` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `psw` tinyblob DEFAULT NULL,
-  `firstLogon` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_login_user` (`user_id`),
-  CONSTRAINT `FK_login_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Daten Export vom Benutzer nicht ausgewählt
-
--- Exportiere Struktur von Tabelle scooter-gmbh.otp
-CREATE TABLE IF NOT EXISTS `otp` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `secret` blob NOT NULL,
-  `qrCode` varchar(50) NOT NULL DEFAULT '',
-  `ascii` longblob NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_otp_user` (`user_id`),
-  CONSTRAINT `FK_otp_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Daten Export vom Benutzer nicht ausgewählt
-
--- Exportiere Struktur von Tabelle scooter-gmbh.ride
-CREATE TABLE IF NOT EXISTS `ride` (
-  `ride_id` int(11) NOT NULL AUTO_INCREMENT,
-  `duration` float NOT NULL DEFAULT 0,
-  `scoter_id` int(11) NOT NULL,
-  PRIMARY KEY (`ride_id`),
-  KEY `FK_ride_scooter` (`scoter_id`),
-  CONSTRAINT `FK_ride_scooter` FOREIGN KEY (`scoter_id`) REFERENCES `scooter` (`scooter_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=513 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Daten Export vom Benutzer nicht ausgewählt
-
--- Exportiere Struktur von Tabelle scooter-gmbh.role
-CREATE TABLE IF NOT EXISTS `role` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Daten Export vom Benutzer nicht ausgewählt
-
--- Exportiere Struktur von Tabelle scooter-gmbh.scooter
-CREATE TABLE IF NOT EXISTS `scooter` (
-  `scooter_id` int(11) NOT NULL,
-  `lat` float NOT NULL DEFAULT 0,
-  `lng` float NOT NULL DEFAULT 0,
-  `label` varchar(50) NOT NULL DEFAULT '0',
-  `battery` int(11) DEFAULT 80,
-  `ip` varchar(50) DEFAULT NULL,
-  `last_contect` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`scooter_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Daten Export vom Benutzer nicht ausgewählt
-
--- Exportiere Struktur von Tabelle scooter-gmbh.scooter_data_gy521
-CREATE TABLE IF NOT EXISTS `scooter_data_gy521` (
-  `scooter_id` int(11) DEFAULT NULL,
-  `timestamp_sc` varchar(50) DEFAULT NULL,
-  `ax` varchar(50) DEFAULT NULL,
-  `ay` varchar(50) DEFAULT NULL,
-  `az` varchar(50) DEFAULT NULL,
-  `gx` varchar(50) DEFAULT NULL,
-  `gy` varchar(50) DEFAULT NULL,
-  `gz` varchar(50) DEFAULT NULL,
-  KEY `FK_scooter_data_gy521_scooter` (`scooter_id`),
-  CONSTRAINT `FK_scooter_data_gy521_scooter` FOREIGN KEY (`scooter_id`) REFERENCES `scooter` (`scooter_id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Daten Export vom Benutzer nicht ausgewählt
-
--- Exportiere Struktur von Tabelle scooter-gmbh.scooter_data_tem_hum
-CREATE TABLE IF NOT EXISTS `scooter_data_tem_hum` (
-  `scooter_id` int(11) DEFAULT NULL,
-  `timestamp_sc` varchar(50) DEFAULT NULL,
-  `temp` varchar(50) DEFAULT NULL,
-  `hum` varchar(50) DEFAULT NULL,
-  KEY `FK__scooter` (`scooter_id`),
-  CONSTRAINT `FK__scooter` FOREIGN KEY (`scooter_id`) REFERENCES `scooter` (`scooter_id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Daten Export vom Benutzer nicht ausgewählt
-
--- Exportiere Struktur von Tabelle scooter-gmbh.scoter_data
-CREATE TABLE IF NOT EXISTS `scoter_data` (
-  `timestamp` varchar(50) DEFAULT NULL,
-  `ax` varchar(50) DEFAULT NULL,
-  `ay` varchar(50) DEFAULT NULL,
-  `az` varchar(50) DEFAULT NULL,
-  `gx` varchar(50) DEFAULT NULL,
-  `gy` varchar(50) DEFAULT NULL,
-  `gz` varchar(50) DEFAULT NULL,
-  `temp` varchar(50) DEFAULT NULL,
-  `hum` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Daten Export vom Benutzer nicht ausgewählt
-
--- Exportiere Struktur von Tabelle scooter-gmbh.user
-CREATE TABLE IF NOT EXISTS `user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL DEFAULT '',
-  `Email` varchar(50) NOT NULL DEFAULT '',
-  `Gender` varchar(50) DEFAULT NULL,
-  `MobileNr` varchar(50) DEFAULT NULL,
-  `Birthday` varchar(50) DEFAULT NULL,
-  `role` int(11) DEFAULT 1,
-  `picture` int(11) DEFAULT NULL,
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `Email` (`Email`),
-  KEY `FK_user_role` (`role`),
-  KEY `FK_user_users_pictures` (`picture`),
-  CONSTRAINT `FK_user_role` FOREIGN KEY (`role`) REFERENCES `role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_user_users_pictures` FOREIGN KEY (`picture`) REFERENCES `users_pictures` (`id`) ON DELETE SET NULL ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Daten Export vom Benutzer nicht ausgewählt
-
--- Exportiere Struktur von Tabelle scooter-gmbh.users_pictures
-CREATE TABLE IF NOT EXISTS `users_pictures` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `filename` varchar(50) NOT NULL,
-  `content_type` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK__user` (`user_id`),
-  CONSTRAINT `FK__user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Daten Export vom Benutzer nicht ausgewählt
-
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
 
 #### Sensor Device with the Website
 
