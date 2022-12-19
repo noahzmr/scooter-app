@@ -129,6 +129,7 @@
                 <ul>
                     <li><a href="#use-case">Use Case</a></li>
                     <li><a href="#sequence-diagram">Sequence Diagram</a></li>
+                    <li><a href="#distribution-diagram">Distribution diagram</a></li>
                 </ul>
             </li>
             <li>
@@ -330,7 +331,7 @@ This can show more accurate details about the scooters.
 
 ##### Logical Network Topology
 
-![Logical Network Topology](img/strucktogramm-network.png)
+![Logical Network Topology](img/strucktogramm-network.svg.svg)
 
 #### Cloud & Data Analytics
 
@@ -450,7 +451,7 @@ The plan area can be divided into the following two areas.
 - [x] Automate Docker Build
 - [x] Automate Deployment
 - [ ] You have developed a product vision for your software.
-- [ ] You have defined stories/tasks for your software that are to be implemented (Note: It is not about defining right at the beginning what you are going to create, but a "reasonable" backlog. You then plan from sprint to sprint).
+- [ ] You have defined stories/tasks for your software that are to be implemented
 - [x] You collect data from at least one data source
 - [x] The data is processed and interpreted
 - [ ] The data is stored in log files or a database
@@ -754,6 +755,10 @@ Meaning of the colors:
 #### Sequence Diagram
 
 ![Sequence Diagram](img/strucktogramm-sequence_diagram.png)
+
+#### Distribution diagram
+
+![Distribution](img/verteilerdiagramm-scooter.drawio.svg)
 
 ### Flowdiagramm
 
