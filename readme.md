@@ -550,7 +550,7 @@ for every additional Scooter a new endpoint would be created.
 [Grafana](https://grafana.com/) is an open source interactive data-visualization platform, developed by Grafana Labs, which allows users to see their data via charts and graphs that are unified into one dashboard (or multiple dashboards!) for easier interpretation and understanding.
 In our case, two dashboards are created automatically.
 The first dashboard is meant to collect all the essential data about the NodeJs server and the other one to display the custom metrics created with Prometheus by the Scooter.
-
+In the `config` folder the settings can be viewed.
 Dashboard One: 
 ![Grafana One](img/grafana-one.png)
 
@@ -856,263 +856,117 @@ Meaning of the colors:
 | 20 | the user can start a stopwatch and the time will be given in mil sec and converted to min | 5 | result will be 1,84 | result will be NaN.the timer value will be given too late | wrong |
 | 30 | With input (time*price per min) + start fee | 5 | Result becomes 1,84 | True |
 
-### Insterllation
-
 ### Installation
-The both insterllation was tested with Ubuntu 20.04LTS, Docker version 20.10.17 and docker-compose version 1.25.0.
-First, this Git repo must be cloned, with the following command:
-```
-git clone https://github.com/noahzmr/scooter-app.git
-```
+Since this repo is relatively large due to videos and photos, it is recommended to do everything with Docker Compose.
+However, the individual images are also available:
 
-### Local
+| What? | Image |
+| ----- | ------ |
+| Backend | docker.autonubil.net/schule/scootec-gmbh/backend |
+| Frontend | docker.autonubil.net/schule/scootec-gmbh/frontend |
+| Scooter | docker.autonubil.net/schule/scootec-gmbh/scooter-hardware/node-server |
 
-- [ ] Set up [UI Directorie](#ui-directorie)
-  - [ ] Clone project in the Path
-  - [ ] Install node modules
-- [ ] Set up [Backend](#backend-directorie)
-  - [ ] Clone project in the Path
-  - [ ] Install node modules
-- [ ] [MariaDB](#mariadb)
-  - [ ] Upload [Script](https://github.com/noahzmr/scooter-app/blob/master/sql/scooter-gmbh.sql)
-- [ ] Edit the [env](#.env) file / if necessary
-  - [ ] DB_HOST
-  - [ ] DB_PORT
-  - [ ] DB_USER
-  - [ ] DB_PASSWORD
-  - [ ] DB_NAME
-  - [ ] MINIO_ROOT_USER
-  - [ ] MINIO_ROOT_PASSWORD
-  - [ ] MAIL_USER
-  - [ ] MAIL_PASSWORD
-  - [ ] MAIL_HOST
-  - [ ] MAIL_PORT
-  - [ ] MAIL_TLS
-  - [ ] MAIL_SECURE
-  - [ ] MAIL_SERVICE
-  - [ ] MAIL_NAME
-- [ ] Set Up min.io
-
-
-
-#### UI Directorie
+If you want to do the whole thing with a single docker-compsoe file, where also Prometheus, Grafana etc. are located, you need to create a simple directory.
 
 ```
-cd scooter_app
-npm install
+mkdri scooter
 ```
 
-After the installation you can check with the command `npm start` if everything worked. If the following window appears at https://localhost:3000 every thing was success!
-
-
-#### Backend Directorie
+```
+cd scooter
+```
 
 ```
-cd -
+mkdri sql
+```
+
+```
+cd sql
+```
+
+Inside this file insert the script from `sql scooter-gmbh.sql` [Script](/sql/scooter-gmbh.sql).
+
+```
+vi scooter-gmbh.sql
+```
+
+```
+cd ..
+```
+
+```
+mkdri backend
+```
+
+```
 cd backend
-npm install
-cd -
-```
-
-#### MariaDB
-
-Install MariaDB at this <a href='https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-20-04'>tutorial</a>
-
-Update Packages
-
-```
-sudo apt update
-```
-
-Install MariaDB
-
-```
-sudo apt install mariadb-server
-```
-
-Start MariaDB
-
-```
-sudo systemctl start mariadb.service
-```
-
-Run the security script
-
-If the error appears:
-
-```
-ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
-```
-
-try:
-
-```
-sudo /etc/init.d/mysql stop
-sudo /etc/init.d/mysql start
 ```
 
 ```
-sudo mysql_secure_installation
-```
-
-Output:
-
-```
-NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
-      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
-
-In order to log into MariaDB to secure it, we'll need the current
-password for the root user.  If you've just installed MariaDB, and
-you haven't set the root password yet, the password will be blank,
-so you should just press enter here.
-
-Enter current password for root (enter for none): 
-OK, successfully used password, moving on...
-
-Setting the root password ensures that nobody can log into the MariaDB
-root user without the proper authorisation.
-
-Set root password? [Y/n] y
-New password: 
-Re-enter new password: 
-Password updated successfully!
-Reloading privilege tables..
- ... Success!
-
-
-By default, a MariaDB installation has an anonymous user, allowing anyone
-to log into MariaDB without having to have a user account created for
-them.  This is intended only for testing, and to make the installation
-go a bit smoother.  You should remove them before moving into a
-production environment.
-
-Remove anonymous users? [Y/n] n
- ... Success!
-
-Normally, root should only be allowed to connect from 'localhost'.  This
-ensures that someone cannot guess at the root password from the network.
-
-Disallow root login remotely? [Y/n] n
- ... skipping.
-
-By default, MariaDB comes with a database named 'test' that anyone can
-access.  This is also intended only for testing, and should be removed
-before moving into a production environment.
-
-Remove test database and access to it? [Y/n] n
- ... skipping.
-
-Reloading the privilege tables will ensure that all changes made so far
-will take effect immediately.
-
-Reload privilege tables now? [Y/n] y
- ... Success!
-
-Cleaning up...
-
-All done!  If you've completed all of the above steps, your MariaDB
-installation should now be secure.
-
-Thanks for using MariaDB!
-```
-
-Import the Database
-
-```
-sudo mysql -u root -p
-```
-
-```
-CREATE DATABASE scooter-gmbh;
-```
-from the path `~/scooter_app`:
-```
-sudo mysql -u root -p scooter-gmbh < ./sql/scooter-gmbh.sql
-```
-
-To check if everything works enter: 
-
-```
-sudo mysqlshow scooter-gmbh
-```
-
-Output: 
-```
-Database: scooter-gmbh
-+----------------------+
-|       Tables         |
-+----------------------+
-| billing              |
-| credit               |
-| login                |
-| otp                  |
-| ride                 |
-| role                 |
-| scooter              |       
-| scooter_data_gy521   |  
-| scooter_data_tem_hum |
-| scoter_data          |  
-| user                 |
-+----------------------+
-```
-
-Now u can start the Backend by typing 
-
-```
-cd backend && npm start
-```
-
-Maybe this appears:
-
-```
-> backend@0.0.0 start
-> node ./app.js
-
-Initializing Database...
-Connetion Failed! SqlError: (conn=72, no: 1698, SQLState: 28000) Access denied for user 'root'@'localhost'
-```
-
-then:
-
-```
-sudo mysql -u root -p
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'root';
-```
-
-After entering `npm start` again, you should see somthing at https://localhost:9001/index.
-
-
-
-### Docker
-
-To install the app with Docker, just run the `docker-compose.yaml` file by going to the project directory and running the following commands:
-
-```
-cd scooter_app
-mkdir backend
-cd backend
 vi .env
 ```
-The `.env` file lock the same as the as [here](#env)
 
-After you setup the env file u you can run:
+In the env file you would have to fill in the `* with your own dates
+
+```bash
+# Server 
+DB_HOST=scooter-db-1                          # Name from Docker-Compose file
+DB_PORT=3306                                  # Default 
+DB_USER=root                                  # Default You can change it
+DB_PASSWORD=************                      # Need a Passwort
+DB_DATABASE=scooter-gmbh                      # The table is automatically generated 
+
+MAIL_USER=****@*****.*****                    # Your Email adress
+MAIL_PASSWORD=************                    # Your Email Password
+MAIL_HOST=***.****.**                         # SMTP / Imap Server
+MAIL_PORT=***                                 # SMTP / Imap Port
+MAIL_TLS=false                                # Needed for this script
+MAIL_SECURE=true                              # Needed for this script
+MAIL_SERVICE=****                             # Mail service 
+MAIL_NAME=<****@****.****>                    # Your Email adress
+
+# DB
+MARIADB_ROOT_PASSWORD=*******                 # Same as DB_PASSWORD
+
+# Minio
+MINIO_ROOT_USER=root                          # Default u can change it
+MINIO_ROOT_PASSWORD=minioadmin                # Default u can change it
+
+# Client
+MINIO_CLIENT_ENDPOINT=scooter-minioserver-1   # Name from Docker-Compose file can change it if wanted
+MINIO_CLIENT_USESSL=false                     # Needed for this script
+MINIO_CLIENT_ACCESSKEY=root                   # Default u can change it
+MINIO_CLIENT_SECRETKEY=minioadmin             # Default u can change it
+
+#Grafana
+GF_AUTH_DISABLE_LOGIN_FORM=true               # Default u can change it
+GF_AUTH_ANONYMOUS_ENABLED=true                # Default u can change it
+GF_AUTH_ANONYMOUS_ORG_ROLE=Admin              # Default u can change it
+
+# PayPal
+PAYPAL_CLIENTID=*********                     # Your PayPal Client Id
+
+# Scooter One
+SERVER=scooter-fullstack-1                    # Name from Docker-Compose file can change it if wanted
+ID=1                                          # Default u can change it
+```
+
+Use full Links:
+| Docker | https://docs.docker.com/get-started/ |
+| List of SMTP and IMAP server | https://www.arclab.com/en/kb/email/list-of-smtp-and-imap-servers-mailserver-list.html |
+| PayPal Dev | https://developer.paypal.com/home |
+| Minio | https://min.io/ |
+
+After all settings have been made, everything can now be started.
 
 ```
-docker-compose up -d
+cd ..
 ```
 
-At the first insterllation daurter the whole thing a little longer, because he downloaded the packets.
-
-output:
-
+```bash 
+docker-compose up     # With open Log file 
+docker-compose up -d  # With cloesed Log file 
 ```
-Starting scooter_gmbh_db_1 ... done
-Starting scooter_gmbh_minio_1   ... done
-Starting scooter_gmbh_adminer_1 ... done
-Starting scooter_gmbh_fullstack_1 ... done
-```
-When everything is ready, the UI should be available at https://localhost:3000.
-
 
 ### Arduino on a Pi
 
