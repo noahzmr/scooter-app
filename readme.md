@@ -79,17 +79,28 @@
                 </li>
               </ul>
             </li>
-            <li><a href="#create">Create</a></li>
-            <li><a href="#verify">Verify</a></li>
-            <li><a href="#package">Package</a></li>
-            <li><a href="#release">Release</a></li>
-            <li><a href="#configure">Configure</a></li>
             <li><a href="#monitor">Monitor</a>
               <ul>
                 <li><a href="#sentry">Sentry</a></li>
                 <li><a href="#prometheus">Prometheus</a></li>
                 <li><a href="#grafana">Grafana</a></li>
               </ul>
+            </li>
+            <li><a href="#verify">Pipline</a>
+              <ul>
+                <li><a href="#renovate">Renovate</a></li>
+                <li><a href="#sonar">Sonar</a></li>
+                <li><a href="#sonar">Sonar</a></li>
+              </ul>
+            </li>
+            <li><a href="#test">Test</a>
+            <ul>
+                <li><a href="#sign-up">Sign-Up</a></li>
+                <li><a href="#sign-in">Sign-In</a></li>
+                <li><a href="#add-credits">Add credits</a></li>
+                <li><a href="#rent-a-scooter">Rent a Scooter</a></li>
+                <li><a href="#delete-user">Delete User</a></li>
+            </ul>
             </li>
         </ul>
     </li>
