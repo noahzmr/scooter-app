@@ -525,6 +525,13 @@ All important information is monitored, such as:
 #### Sentry
 
 [Sentry](https://sentry.io/) is an error and performance monitoring tool.
+With us all data is sent and captured by the NodeJs server.
+
+Sentry Dashboard:
+![Sentry Dashboard](img/sentry-one.png)
+
+Sentry Error Details:
+![Sentry error Detail](img/sentry-two.png)
 
 #### Prometheus
 
