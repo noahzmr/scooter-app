@@ -580,29 +580,21 @@ All testing is fully automated using Jest and Selenium.
 * Create new user
 * Welcome email
 
-<video controls>
-  <source src="img/Sign-Up.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+![SignUp](https://user-images.githubusercontent.com/65290559/208714385-6f6c569a-eb32-456d-b15e-050c45db2cf8.mp4)
+
 
 #### Sign-In
 
 * Log in with the created user
 
-<video controls>
-  <source src="img/Sign-In.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+![SignIn](https://user-images.githubusercontent.com/65290559/208714566-2b7dfffe-81ca-4d75-8981-2a0d5cddeb61.mp4)
 
 #### Add credits
 
 * Log in with the created user
 * Add credits via PayPal
 
-<video controls>
-  <source src="img/paypal.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+![AddCredit](
 
 #### Rent a Scooter
 
@@ -727,7 +719,11 @@ The working hours consists of a 35 hour week.
 
 
 | Cost Point | Brutto Cost |
-| ---------- | ----------- | 
+| ---------- | ------
+
+https://user-images.githubusercontent.com/65290559/208714689-167eed05-2e84-4bb2-895d-b4d0b22d402f.mp4
+
+----- | 
 | Software Rent | 30 € per Month |
 | Software Hosting | 50 € for 100 devices |
 | Support | 100 € per Hour |
