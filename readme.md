@@ -530,9 +530,25 @@ All important information is monitored, such as:
 
 [Prometheus](https://prometheus.io/) is an open-source systems monitoring and alerting toolkit originally built at SoundCloud.
 
+We currently have three endpoints inside,
+* Scooter App
+* Prometheus Self
+* Scooter
+for every additional Scooter a new endpoint would be created.
+
+![Prometheus Endpoints](img/prometheus.png)
+
 #### Grafana
 
 [Grafana](https://grafana.com/) is an open source interactive data-visualization platform, developed by Grafana Labs, which allows users to see their data via charts and graphs that are unified into one dashboard (or multiple dashboards!) for easier interpretation and understanding.
+In our case, two dashboards are created automatically.
+The first dashboard is meant to collect all the essential data about the NodeJs server and the other one to display the custom metrics created with Prometheus by the Scooter.
+
+Dashboard One: 
+![Grafana One](img/grafana-one.png)
+
+Second Dashboard:
+![Grafana One](img/grafana-two.png)
 
 ### Pipline
 
