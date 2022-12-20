@@ -580,14 +580,14 @@ All testing is fully automated using Jest and Selenium.
 * Create new user
 * Welcome email
 
-![SignUp](https://user-images.githubusercontent.com/65290559/208714385-6f6c569a-eb32-456d-b15e-050c45db2cf8.mp4)
+https://user-images.githubusercontent.com/65290559/208714385-6f6c569a-eb32-456d-b15e-050c45db2cf8.mp4
 
 
 #### Sign-In
 
 * Log in with the created user
 
-![SignIn](https://user-images.githubusercontent.com/65290559/208714566-2b7dfffe-81ca-4d75-8981-2a0d5cddeb61.mp4)
+https://user-images.githubusercontent.com/65290559/208714566-2b7dfffe-81ca-4d75-8981-2a0d5cddeb61.mp4
 
 #### Add credits
 
