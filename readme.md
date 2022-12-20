@@ -573,19 +573,62 @@ It automatically runs once a day, one pass, if successful a Docker image is buil
 
 ### Test
 
+All testing is fully automated using Jest and Selenium. 
+
 #### Sign-Up
+
+* Create new user
+* Welcome email
+
+<video controls>
+  <source src="img/Sign-Up.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 #### Sign-In
 
+* Log in with the created user
+
+<video controls>
+  <source src="img/Sign-In.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
 #### Add credits
 
+* Log in with the created user
+* Add credits via PayPal
+
+<video controls>
+  <source src="img/paypal.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+#### Rent a Scooter
+
+* Log in with the created user
+* Rent a Scooter
+
+<video controls>
+  <source src="img/rent-scooter.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
 #### Delete User
+
+* Log in with the created user
+* Delete the created user
+
+<video controls>
+  <source src="img/delete-user.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 ## Business Canvas
 
 ### Vision Board
 
-![Visonboard](img/vision-board-scoter.png)
+![Visonboard](./img/vision-board-scoter.png)
 
 ### Key Partners
 
