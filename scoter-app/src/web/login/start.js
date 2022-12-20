@@ -1,34 +1,21 @@
-import '../../App.css';
-import { useState, useEffect, useContext } from 'react';
+import '../../style/App.css'
+import React, { useState, useContext } from 'react'
 import scooter from '../../img/scooter.png'
-import LoginPage from './login';
-import CreateNewUser from '../createNewUser';
-import { UserContext, ShowAddContext, ShowAddCreditContext } from '../../component/context';
-import { isMobile } from 'react-device-detect';
+import LoginPage from './login'
+import CreateNewUser from '../user/createNewUser'
+import { ShowAddContext } from '../../services/context'
+import { isMobile } from 'react-device-detect'
 
-function Start() {
+function Start () {
+  const showStart = 'block'
+  const [showLogin, setShowLogin] = useState('none')
+  const [showNewUser, setShowNewUser] = useState('none')
+  /* eslint-disable no-unused-vars */
+  const [showAdd, setShowAdd] = useContext(ShowAddContext)
+  /* eslint-enable no-unused-vars */
 
-    const [showStart, setShowStart] = useState('block')
-    const [showLogin, setShowLogin] = useState('none')
-    const [showNewUser, setShowNewUser] = useState('none')
-    const [authorisatUser, setAuthorisatUser] = useContext(UserContext);
-    const [showAdd, setShowAdd] = useContext(ShowAddContext)
-    const [showAddCredit, setShowAddCredit] = useContext(ShowAddCreditContext)
-
-    const CheckIfLogin = () => {
-        console.log('authorisatUser', authorisatUser.data, authorisatUser)
-        const localStorageUserCheck = localStorage.getItem('user')
-        const localStorageUserCheckJson = JSON.parse(localStorageUserCheck)
-        console.log("Still Login?", localStorageUserCheckJson)
-        if (authorisatUser.Birthday == 'default') {
-            setShowStart('block')
-        } else {
-            setShowStart('none')
-        }
-    }
-
-    if (!isMobile) {
-        return (
+  if (!isMobile) {
+    return (
             <div
                 className="body"
                 style={{ display: showStart }}
@@ -61,13 +48,15 @@ function Start() {
                                         className='btnActionSecondary'
                                         onClick={() => setShowNewUser('block')}
                                         type='button'
+                                        id='signup'
                                     >
-                                        I'm new
+                                        I&apos;m new
                                     </button>
                                     <button
                                         className='btnActionPrimary'
-                                        onClick={() => { setShowLogin('block'); setShowAdd('none'); setShowAddCredit('none') }}
+                                        onClick={() => { setShowLogin('block'); setShowAdd('none') }}
                                         type='button'
+                                        id='login'
                                     >
                                         Login
                                     </button>
@@ -87,15 +76,14 @@ function Start() {
                     <CreateNewUser />
                 </div>
             </div>
-        );
-    } else {
-        return (
+    )
+  } else {
+    return (
             <div>
                 Mobile user
             </div>
-        )
-    }
-
+    )
+  }
 }
 
-export default Start;
+export default Start

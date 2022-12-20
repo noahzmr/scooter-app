@@ -1,20 +1,17 @@
-import '../../App.css';
-import { useState, useEffect, useContext } from 'react';
+import '../../style/App.css'
+import React, { useState, useContext } from 'react'
 import scooter from '../../img/scooter.png'
-import LoginPageMobile from './login_mobile';
-// import CreateNewUser from './createNewUser';
-import { UserContext, ShowAddContext, ShowAddCreditContext } from '../../component/context';
-import CreateNewUserMobile from './new_customer';
-function StartMobile() {
+import LoginPageMobile from './login_mobile'
+import { ShowAddContext, ShowAddCreditContext } from '../../services/context'
+import CreateNewUserMobile from './new_customer'
+function StartMobile () {
+  const showStart = 'block'
+  const [showLogin, setShowLogin] = useState('none')
+  const [showNewUser, setShowNewUser] = useState('none')
+  const [setShowAdd] = useContext(ShowAddContext)
+  const [setShowAddCredit] = useContext(ShowAddCreditContext)
 
-    const [showStart, setShowStart] = useState('block')
-    const [showLogin, setShowLogin] = useState('none')
-    const [showNewUser, setShowNewUser] = useState('none')
-    const [authorisatUser, setAuthorisatUser] = useContext(UserContext);
-    const [showAdd, setShowAdd] = useContext(ShowAddContext)
-    const [showAddCredit, setShowAddCredit] = useContext(ShowAddCreditContext)
-
-    return (
+  return (
         <div
             className="body"
             style={{ display: showStart }}
@@ -57,7 +54,7 @@ function StartMobile() {
                                     onClick={() => setShowNewUser('block')}
                                     type='button'
                                 >
-                                    I'm new
+                                    I&apos;m new
                                 </button>
 
                             </div>
@@ -76,7 +73,7 @@ function StartMobile() {
                 <CreateNewUserMobile />
             </div>
         </div>
-    );
+  )
 }
 
-export default StartMobile;
+export default StartMobile
