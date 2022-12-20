@@ -501,7 +501,7 @@ The plan area can be divided into the following two areas.
 - [x] You have applied basics of object-oriented programming.
 - [x] Selected data is stored in a database or other useful storage medium
 - [x] Data is delivered via heterogeneous media
-- [ ] You have implemented at least five automated tests
+- [x] You have implemented at least five automated tests
 
 ##### Wont-have
 
