@@ -594,27 +594,21 @@ https://user-images.githubusercontent.com/65290559/208714566-2b7dfffe-81ca-4d75-
 * Log in with the created user
 * Add credits via PayPal
 
-![AddCredit](
+https://user-images.githubusercontent.com/65290559/208715462-5777a59b-8d86-43c1-bdbf-af101c1a4ece.mp4
 
 #### Rent a Scooter
 
 * Log in with the created user
 * Rent a Scooter
 
-<video controls>
-  <source src="img/rent-scooter.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+https://user-images.githubusercontent.com/65290559/208715630-d7d1673a-0fc9-43fa-8bbf-9252a10f76f2.mp4
 
 #### Delete User
 
 * Log in with the created user
 * Delete the created user
 
-<video controls>
-  <source src="img/delete-user.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+https://user-images.githubusercontent.com/65290559/208715794-7105f4df-b143-4c44-bd12-3c942ff1f6f5.mp4
 
 ## Business Canvas
 
