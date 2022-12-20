@@ -16,7 +16,7 @@
     ·
     <a href="https://github.com/noahzmr/scooter-app/issues">Report Bug</a>
     ·
-    <a href="https://github.com/noahzmr/scooter-app/discussions">Request Feature</a>
+    <a href="https://github.com/noahzmr/scooter-app/discussions/categories/ideas">Request Feature</a>
   </p>
 </div>
 
