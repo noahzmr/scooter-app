@@ -1,183 +1,145 @@
-var express = require('express');
-var router = express.Router();
-var db_con = require('../db-connection');
-var saltHash = require('password-salt-and-hash')
-var nodemailer = require('nodemailer');
-var bcrypt = require('bcrypt'); // bcrypt
+const express = require('express')
+const router = express.Router()
+const dbCon = require('../config/db-connection')
+const bcrypt = require('bcrypt') // bcrypt
 const speakeasy = require('speakeasy')
-const QRCode = require('qrcode');
+const QRCode = require('qrcode')
+const Sentry = require('@sentry/node')
+const minioClient = require('../config/minio')
+const transporter = require('../config/nodemailer')
 
-var transporter = nodemailer.createTransport({
-  service: process.env.MAIL_SERVICE,
-  auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASSWORD
-  }
-});
-
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
+/* GET user listing. */
 router.get('/userData/:user', function (req, res) {
-  sql = `SELECT user_ID, fName, nName, Gender, Birthday, Email, MobileNr, (SELECT User_Blob FROM userpicture WHERE User_ID = user.user_ID) AS User_Blob FROM user WHERE Email = ?;`,
-    db_con.query(sql, [req.params.user], (err, json) => {
-      if (err) {
-        res.status(500).json({ "error": err.message });
-        return;
-      }
-      res.send(json[0])
-    });
+  const sql = 'SELECT user_ID, name, Gender, Birthday, Email, MobileNr FROM user WHERE Email = ?;'
+  dbCon.query(sql, [req.params.user], (err, json) => {
+    if (err) {
+      Sentry.captureException(err)
+      res.status(500).json({ error: err.message })
+      return
+    }
+    res.send(json[0])
+  })
 })
-router.get('/card/:userID', (req, res, next) => {
 
-  var sql = `SELECT (SELECT fName FROM user WHERE user_id = payment_methode.user_id)AS user_fName,(SELECT nName FROM user WHERE user_id = payment_methode.user_id)AS user_lName,(SELECT bank_name FROM bank WHERE bank_id=payment_methode.bank_id)AS Bank_Name,(SELECT bank_logo FROM bank WHERE bank_id=payment_methode.bank_id)AS Bank_Logo,payment_methode_id, card_number, expiration_date_month, expiration_date_year, cardholde, cvc FROM payment_methode WHERE user_id = ?;`
-  db_con.query(
-    sql,
-    [req.params.userID],
-    (err, json) => {
-      if (err) {
-        console.log({ "error": err.message })
-        return;
-      }
-      var hash = json.card_number
-      console.log(json, hash)
-      res.json(json)
-    });
-})
 router.get('/credit/:userID', (req, res, next) => {
-
-  var sql = `SELECT * FROM credit WHERE user_id = ?;`
-  db_con.query(
+  const sql = 'SELECT * FROM credit WHERE user_id = ?;'
+  dbCon.query(
     sql,
     [req.params.userID],
     (err, json) => {
       if (err) {
-        console.log({ "error": err.message })
-        return;
+        Sentry.captureException(err)
+        console.log({ error: err.message })
+        return
       }
       console.log(json[0])
       res.json(json[0])
-    });
+    })
 })
 router.get('/billing/:userID', (req, res, next) => {
-
-  var sql = `SELECT billing_id, (SELECT fName FROM user WHERE user_id = billing.user_id) AS fName,(SELECT nName FROM user WHERE user_id = billing.user_id) AS lName, (SELECT duration FROM ride WHERE ride_id = billing.ride_id) AS duration, cost FROM billing WHERE user_id = ?;`
-  db_con.query(
+  const sql = 'SELECT billing_id, (SELECT name FROM user WHERE user_id = billing.user_id) AS name, (SELECT duration FROM ride WHERE ride_id = billing.ride_id) AS duration, cost FROM billing WHERE user_id = ?;'
+  dbCon.query(
     sql,
     [req.params.userID],
     (err, json) => {
       if (err) {
-        console.log({ "error": err.message })
-        return;
+        Sentry.captureException(err)
+        console.log({ error: err.message })
+        return
       }
       console.log(json)
       res.json(json)
-    });
-})
-router.get('/bank', (req, res, next) => {
-
-  var sql = `SELECT * FROM bank;`
-  db_con.query(
-    sql,
-    (err, json) => {
-      if (err) {
-        console.log({ "error": err.message })
-        return;
-      }
-      console.log(json)
-      res.json(json)
-    });
+    })
 })
 
 router.post('/create', function (req, res) {
-  let nName = req.body.fName;
-  let lName = req.body.nName;
-  let Gender = req.body.Gender;
-  let Birthday = req.body.Birthday;
-  let MobileNr = req.body.Number;
-  let Email = req.body.Email;
-  let pictureBlob = req.body.pictureBlob;
-  let name = req.body.fName + " " + req.body.nName;
-  var password = req.body.Password;
+  const name = req.body.name
+  const Gender = req.body.Gender
+  const Birthday = req.body.Birthday
+  const MobileNr = req.body.Number
+  const Email = req.body.Email
+  const pictureBlob = req.body.pictureBlob
+  const password = req.body.Password
 
-  sql1 = "INSERT INTO user (fName, nName, Gender, Birthday, Email, MobileNr) VALUES (?, ?, ?, ?, ?, ?);"
-  sql2 = 'INSERT INTO login (user_id, psw) VALUES ((SELECT user_id FROM user WHERE Email = ?), ?)'
-  sql3 = 'INSERT INTO userpicture (User_Blob, User_ID) VALUES (?, (SELECT user_ID FROM user WHERE EMAIL=?));',
-    sql4 = 'INSERT INTO credit (quantity, user_id) VALUES (20.00, ?)'
-  db_con.query(
-    sql1, [nName, lName, Gender, Birthday, Email, MobileNr],
+  const sql1 = 'INSERT INTO user (name, Gender, Birthday, Email, MobileNr) VALUES ( ?, ?, ?, ?, ?);'
+  const sql2 = 'INSERT INTO login (user_id, psw) VALUES ((SELECT user_id FROM user WHERE Email = ?), ?)'
+  const sql4 = 'INSERT INTO credit (quantity, user_id) VALUES (20.00, ?)'
+  dbCon.query(
+    sql1,
+    [name, Gender, Birthday, Email, MobileNr],
     (err, result) => {
       if (err) {
-        console.log({ "error": err.message });
-        return;
+        Sentry.captureException(err)
+        console.log({ error: err.message })
+        return
       }
-      console.log(result);
+      const userId = result.insertId.toString()
+      console.log(result)
       if (result.insertId > 0) {
-        db_con.query(
+        dbCon.query(
           sql4,
           [result.insertId],
           (err, result) => {
             if (err) {
-              console.log({ "error": err.message });
-              return;
+              Sentry.captureException(err)
+              console.log({ error: err.message })
+              return
             }
-            console.log(result);
+            console.log(result)
           }
-        );
-        db_con.query(
-          sql3,
-          [pictureBlob, Email],
-          (err, result) => {
-            if (err) {
-              console.log({ "error": err.message });
-              return;
-            }
-            console.log(result);
-          }
-        );
-        const saltRounds = 10;
+        )
+
+        const saltRounds = 10
         if (password.length > 0) {
           bcrypt.genSalt(saltRounds, function (err, salt) {
+            if (err) {
+              Sentry.captureException(err)
+              res.status(500).json({ error: err.message })
+              return
+            }
             bcrypt.hash(password, salt, function (err, hash) {
+              if (err) {
+                Sentry.captureException(err)
+                res.status(500).json({ error: err.message })
+                return
+              }
               // returns hash
-              console.log(hash);
-              db_con.query(
+              console.log(hash)
+              dbCon.query(
                 sql2,
                 [Email, hash],
                 (err, result) => {
                   if (err) {
-                    console.log({ "error": err.message })
-                    return;
-                  };
-                  console.log('result', result);
+                    Sentry.captureException(err)
+                    console.log({ error: err.message })
+                    return
+                  }
+                  console.log('result', result)
                   const secret = speakeasy.generateSecret({
                     issuer: 'Scooter GmbH',
                     name: 'Scooter GmbH | ' + Email
-                  });
+                  })
                   console.log('secret', secret.otpauth_url)
-                  QRCode.toDataURL(secret.otpauth_url, function (err, data_url) {
-                    console.log(data_url);
-                    db_con.query(
-                      'INSERT INTO otp (user_id, secret, qrCode, ascii) VALUES ((SELECT user_ID FROM user WHERE Email = ?), ?, ?, ?);',
-                      [Email, secret, data_url, secret.ascii],
-                      (err, result) => {
-                        if (err) {
-                          console.log({ "error": err.message })
-                          return;
-                        }
-                        console.log(result)
-                      }
+                  QRCode.toDataURL(secret.otpauth_url, function (err, dataUrl) {
+                    if (err) {
+                      Sentry.captureException(err)
+                      res.status(500).json({ error: err.message })
+                      return
+                    }
+                    console.log(dataUrl)
+                    dbCon.query(
+                      'INSERT INTO otp (user_id, secret, ascii ) VALUES (?,?,?)',
+                      [userId, secret, secret.ascii]
                     )
-                  });
-
+                    res.json({ dataUrl, userId })
+                  })
                 }
               )
-            });
-          });
+            })
+          })
 
-          var mailOptions = {
-            from: `ScooTec GmbH` + process.env.MAIL_NAME,
+          const mailOptions = {
+            from: 'ScooTec GmbH' + process.env.MAIL_NAME,
             to: Email,
             subject: 'Welcome!',
             text: 'Your account have been Created!',
@@ -187,103 +149,70 @@ router.post('/create', function (req, res) {
                   <img src="cid:logo" style=" margin-top: 0%; max-height:5em; transform: scale(0.25);"/></div></div>`,
             attachments: [{
               filename: 'logo.png',
-              path: '/home/noerkel/testnoerkel/noerkelIT/frontend/src/img/logo.png',
+              path: './public/img/favicon.png',
               cid: 'logo'
             }]
 
-          };
+          }
 
           transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
-              console.log(error);
+              console.log(error)
             } else {
-              console.log('Email sent: ' + info.response);
+              console.log('Email sent: ' + info.response)
             }
-          });
+          })
         }
       } else {
         console.log('Fail!')
       }
     }
-  );
-});
-router.post('/createPaymentMethode', function (req, res) {
-  let bank = req.body.bank;
-  let cardNumber = req.body.cardNumber;
-  let expirationDateMonth = req.body.expirationDateMonth;
-  let expirationDateYear = req.body.expirationDateYear;
-  let cardholde = req.body.cardholde;
-  let userId = req.body.user
+  )
+})
 
-  db_con.query(
-    'INSERT INTO payment_methode (user_id, bank_id, card_number, expiration_date_month, expiration_date_year, cardholde) VALUES (?,?,?,?,?,?);',
-    [userId, bank, cardNumber, expirationDateMonth, expirationDateYear, cardholde],
-    (err, result) => {
-      if (err) {
-        console.log({ "error": err.message });
-        return;
-      }
-      console.log(result);
-    }
-  );
-});
-router.post('/UploadPicture', function (req, res) {
-  let pictureBlob = req.body.pictureBlob;
-  let email = req.body.email;
-
-  db_con.query(
-    'INSERT INTO userpicture (User_Blob, User_ID) VALUES (?, (SELECT user_ID FROM user WHERE EMAIL=?));',
-    [pictureBlob, email],
-    (err, result) => {
-      if (err) {
-        console.log({ "error": err.message });
-        return;
-      }
-      console.log(result);
-    }
-  );
-  res.setHeader("Access-Control-Allow-Origin", "*");
-});
 router.post('/ride', function (req, res) {
-  let time = req.body.time;
-  let scoterId = req.body.scoterId;
+  const time = req.body.time
+  const scoterId = req.body.scoterId
 
-  db_con.query(
+  dbCon.query(
     'INSERT INTO ride (duration, scoter_id) VALUES (?,?);',
     [time, scoterId],
     (err, result) => {
       if (err) {
-        console.log({ "error": err.message });
-        return;
+        Sentry.captureException(err)
+        console.log({ error: err.message })
+        return
       }
-      console.log('result', result.insertId);
+      console.log('New Ride:', result.insertId.toString())
       res.send(result.insertId.toString())
     }
-  );
-});
+  )
+})
 router.post('/billing', function (req, res) {
-  let userId = req.body.userId;
-  let rideId = req.body.rideId;
-  let cost = req.body.cost;
-  let driveMinutes = req.body.driveMinutes;
+  const userId = req.body.userId
+  const rideId = req.body.rideId
+  const cost = req.body.cost
+  const driveMinutes = req.body.driveMinutes
 
-  db_con.query(
+  dbCon.query(
     'SELECT quantity FROM credit WHERE user_id =?',
     [userId],
     (err, json) => {
       if (err) {
-        console.log({ "error": err.message });
-        return;
+        Sentry.captureException(err)
+        console.log({ error: err.message })
+        return
       }
       console.log(json[0].quantity)
-      let costValue = json[0].quantity - cost;
-      db_con.query(
+      const costValue = json[0].quantity - cost
+      dbCon.query(
         'UPDATE credit SET quantity= ? WHERE user_id = ?',
         [costValue, userId],
         (err, result) => {
           if (err) {
-            console.log({ "error": err.message });
-            return;
+            Sentry.captureException(err)
+            console.log({ error: err.message })
+            return
           }
           console.log(result)
         }
@@ -291,30 +220,33 @@ router.post('/billing', function (req, res) {
     }
 
   )
-  db_con.query(
+  dbCon.query(
     'INSERT INTO billing (user_id, ride_id, cost) VALUES (?,?,?);',
     [userId, rideId, cost],
     (err, result) => {
       if (err) {
-        console.log({ "error": err.message });
-        return;
+        Sentry.captureException(err)
+        console.log({ error: err.message })
+        return
       }
-      console.log(result.insertId);
-      if (result.insertId != 0) {
-        sql = 'SELECT * FROM user WHERE user_id = ?;'
-        db_con.query(
+      res.send(true)
+      console.log(result.insertId)
+      if (result.insertId !== 0) {
+        const sql = 'SELECT * FROM user WHERE user_id = ?;'
+        dbCon.query(
           sql,
           [userId],
           (err, json) => {
             if (err) {
-              console.log({ "error": err.message });
-              return;
+              Sentry.captureException(err)
+              console.log({ error: err.message })
+              return
             }
-            console.log(json[0]);
-            let name = json[0].fName + ' ' + json[0].nName;
-            let Email = json[0].Email
-            var mailOptions = {
-              from: `ScooTec GmbH` + process.env.MAIL_NAME,
+            console.log(json[0])
+            const name = json[0].name
+            const Email = json[0].Email
+            const mailOptions = {
+              from: 'ScooTec GmbH' + process.env.MAIL_NAME,
               to: Email,
               subject: 'Thanks for the Ride!',
               text: 'See the Billing Information!',
@@ -324,55 +256,327 @@ router.post('/billing', function (req, res) {
                     <img src="cid:logo" style=" margin-top: 0%; max-height:5em; transform: scale(0.25);"/></div></div>`,
               attachments: [{
                 filename: 'logo.png',
-                path: '/home/noerkel/testnoerkel/noerkelIT/frontend/src/img/logo.png',
+                path: './public/img/favicon.png',
                 cid: 'logo'
               }]
 
-            };
+            }
 
             transporter.sendMail(mailOptions, function (error, info) {
               if (error) {
-                console.log(error);
+                console.log(error)
               } else {
-                console.log('Email sent: ' + info.response);
+                console.log('Email sent: ' + info.response)
               }
-            });
+            })
           }
         )
       }
     }
-  );
-});
+  )
+})
 router.post('/credit', function (req, res) {
-  let userId = req.body.userId;
-  let add = req.body.add;
+  const userId = req.body.userId
+  const add = req.body.add
 
-  db_con.query(
+  dbCon.query(
     'SELECT quantity FROM credit WHERE user_id =?',
     [userId],
     (err, json) => {
       if (err) {
-        console.log({ "error": err.message });
-        return;
+        Sentry.captureException(err)
+        console.log({ error: err.message })
+        return
       }
       console.log('quantity', json[0].quantity, 'add', add)
-      const num1 = parseInt(json[0].quantity);
-      const num2 = parseInt(add);
-      let costValue = num1 + num2;
-      db_con.query(
+      const num1 = parseInt(json[0].quantity)
+      const num2 = parseInt(add)
+      const costValue = num1 + num2
+      dbCon.query(
         'UPDATE credit SET quantity= ? WHERE user_id = ?',
         [costValue, userId],
         (err, result) => {
           if (err) {
-            console.log({ "error": err.message });
-            return;
+            Sentry.captureException(err)
+            console.log({ error: err.message })
+            return
           }
           console.log(result)
         }
       )
     }
-  );
-});
+  )
+})
 
+router.put('/gender', (req, res, next) => {
+  const sql = 'UPDATE user SET gender = ? WHERE user_id=?;'
+  dbCon.query(
+    sql,
+    [req.body.gender, req.body.user],
+    (err, result) => {
+      if (err) {
+        Sentry.captureException(err)
+        res.status(500).json({ error: err.message })
+        console.log(err)
+        return
+      }
+      console.log(`[System](User) Update the Gender where id ${req.params.user}: `, result.insertId)
+      res.send(result.insertId.toString())
+    }
+  )
+})
 
-module.exports = router;
+router.put('/username', (req, res, next) => {
+  const sql = 'UPDATE user SET name = ? WHERE user_id=?;'
+  dbCon.query(
+    sql,
+    [req.body.newName, req.body.user],
+    (err, result) => {
+      if (err) {
+        Sentry.captureException(err)
+        res.status(500).json({ error: err.message })
+        console.log(err)
+        return
+      }
+      console.log(`[System](User) Update the Username where id ${req.params.id}: `, result.insertId)
+      res.send(result.insertId.toString())
+    }
+  )
+})
+
+router.put('/email', (req, res, next) => {
+  const sql = 'UPDATE user SET Email = ? WHERE user_id=?;'
+  dbCon.query(
+    sql,
+    [req.body.email, req.body.user],
+    (err, result) => {
+      if (err) {
+        Sentry.captureException(err)
+        res.status(500).json({ error: err.message })
+        console.log(err)
+        return
+      }
+      console.log(`[System](User) Update the Email where id ${req.params.id}: `, result.insertId)
+      res.send(result.insertId.toString())
+    }
+  )
+})
+
+router.put('/number', (req, res, next) => {
+  const sql = 'UPDATE user SET MobileNr = ? WHERE user_id=?;'
+  dbCon.query(
+    sql,
+    [req.body.number, req.body.user],
+    (err, result) => {
+      if (err) {
+        Sentry.captureException(err)
+        res.status(500).json({ error: err.message })
+        console.log(err)
+        return
+      }
+      console.log(`[System](User) Update the Email where id ${req.params.id}: `, result.insertId)
+      res.send(result.insertId.toString())
+    }
+  )
+})
+
+router.put('/birthday', (req, res, next) => {
+  const sql = 'UPDATE user SET Birthday = ? WHERE user_id=?;'
+  dbCon.query(
+    sql,
+    [req.body.birthday, req.body.user],
+    (err, result) => {
+      if (err) {
+        Sentry.captureException(err)
+        res.status(500).json({ error: err.message })
+        console.log(err)
+        return
+      }
+      console.log(`[System](User) Update the Email where id ${req.params.id}: `, result.insertId)
+      res.send(result.insertId.toString())
+    }
+  )
+})
+
+router.post('/:userId/picture', (req, res) => {
+  if (req.files === null || req.files === undefined) {
+    console.log('[System](Minio) Updateing user Pictuire Failed, no file send!')
+    console.log({
+      files: req.files,
+      params: req.params,
+      body: req.body,
+      fields: req.fields
+    })
+    return res.status(204).json({ msg: 'No file uploaded!' })
+  }
+  console.log('[System](Minio) Updateing user Pictuire...', {
+    files: req.files.file,
+    params: req.params.userId
+  })
+
+  const file = req.files.file
+  const sql = 'UPDATE user SET picture = ? WHERE user_id=?;'
+  const sqlPicture = 'INSERT INTO users_pictures (filename,content_type,user_id) VALUES (?,?,?);'
+  const sqlCheck = 'SELECT COUNT(id) AS counter FROM users_pictures WHERE user_id = ?;'
+  const sqlUpdate = 'UPDATE users_pictures SET content_type = ? WHERE user_id = ?; '
+
+  console.log(file.mimetype.split('/')[1])
+  console.log(file.path)
+
+  minioClient.putObject('scooter', `user_${req.params.userId}_picture.${file.mimetype.split('/')[1]}`, file.data, (error, etag) => {
+    if (error) {
+      Sentry.captureException(error)
+      return console.log(error)
+    }
+    console.log(etag)
+    console.log('[System](Minio) Checking If it is users first Pictuire...')
+    dbCon.query(
+      sqlCheck,
+      [req.params.userId],
+      (err, result) => {
+        if (err) {
+          Sentry.captureException(err)
+          res.status(500).json({ error: err.message })
+          console.log(err)
+          return
+        }
+        console.log(result[0].counter)
+        if (result[0].counter === 1n) {
+          console.log('Update User Picture...')
+          dbCon.query(
+            sqlUpdate,
+            [file.type, req.params.userId],
+            (err, result) => {
+              if (err) {
+                Sentry.captureException(err)
+                res.status(500).json({ error: err.message })
+                console.log(err)
+                return
+              }
+              res.send(result.insertId.toString())
+            }
+          )
+        }
+        if (result[0].counter === 0n) {
+          console.log('Set first User Picture...')
+          dbCon.query(
+            sqlPicture,
+            [`user_${req.params.userId}_picture.${file.mimetype.split('/')[1]}`, file.mimetype, req.params.userId],
+            (err, result) => {
+              if (err) {
+                Sentry.captureException(err)
+                res.status(500).json({ error: err.message })
+                console.log(err)
+                return
+              }
+              dbCon.query(
+                sql,
+                [result.insertId.toString(), req.params.userId],
+                (err, result) => {
+                  if (err) {
+                    Sentry.captureException(err)
+                    res.status(500).json({ error: err.message })
+                    console.log(err)
+                    return
+                  }
+                  res.send(result.insertId.toString())
+                }
+              )
+              console.log(`[System](User) Update the Picture where id ${req.params.userId}: `, result.insertId)
+            })
+        }
+      })
+  })
+})
+
+/* eslint-disable new-cap */
+router.get('/picture/:userID', (req, res, next) => {
+  const sql = 'SELECT * FROM users_pictures WHERE id = (SELECT picture FROM user WHERE user_id = ?)'
+
+  dbCon.query(
+    sql,
+    [req.params.userID],
+    (err, json) => {
+      if (err) {
+        Sentry.captureException(err)
+        res.status(500).json({ error: err.message })
+        console.log(err)
+        return
+      }
+      console.log('PICTURE', json)
+      if (json.length === 0) {
+        console.log('User have no Profilepicture!')
+        res.send('User have no Profilepicture!')
+        return
+      }
+      async function call() {
+        const promise = new Promise((resolve, reject) => {
+          const Buff = []
+          let size = 0
+          minioClient.getObject('scooter', json[0].filename)
+            .then((dataStream) => {
+              dataStream.on('data', (chunk) => {
+                Buff.push(chunk)
+                size += chunk.length
+              })
+              dataStream.on('end', () => {
+                console.log('[System](MinIO) End. Total size = ' + size)
+                //     console.log("[System](MinIO) End Buffer : " + buff)
+                const NewBuffer = Buffer.concat(Buff)
+                resolve(NewBuffer)
+              })
+              dataStream.on('error', (err) => {
+                console.log('[System](MinIO) error: ', err)
+                reject(err)
+              })
+            })
+            .catch((reject) => { return reject })
+        })
+
+        return promise
+      }
+      async function GetData() {
+        const data = await call()
+          .then((data) => {
+            dbCon.query(
+              sql,
+              [req.params.userID],
+              (err, result) => {
+                if (err) {
+                  Sentry.captureException(err)
+                  res.status(500).json({ error: err.message })
+                  console.log(err)
+                  return
+                }
+                console.log(result)
+                console.log(`[System](User) Get User Profile from the id ${req.params.userID}: `)
+                res.setHeader('Content-Type', json[0].content_type)
+                res.send(new Buffer.from(data))
+              })
+          })
+        console.log(data)
+      }
+      GetData()
+    }
+  )
+})
+
+router.delete('/delete/:userID', (req, res, next) => {
+  const sql = 'DELETE FROM user WHERE user_id = ?'
+  console.log(req.params.userID)
+  dbCon.query(
+    sql,
+    [req.params.userID],
+    (err, json) => {
+      if (err) {
+        Sentry.captureException(err)
+        res.status(500).json({ error: err.message })
+        console.log(err)
+        return
+      }
+      console.log('Delete User: ', req.params.userID)
+    }
+  )
+})
+module.exports = router
+/* eslint-enable new-cap */

@@ -910,7 +910,7 @@ In the env file you would have to fill in the `* with your own dates
 
 ```bash
 # Server 
-DB_HOST=scooter-db-1                          # Name from Docker-Compose file
+DB_HOST=scooter_db_1                          # Name from Docker-Compose file
 DB_PORT=3306                                  # Default 
 DB_USER=root                                  # Default You can change it
 DB_PASSWORD=************                      # Need a Passwort
@@ -933,7 +933,7 @@ MINIO_ROOT_USER=root                          # Default u can change it
 MINIO_ROOT_PASSWORD=minioadmin                # Default u can change it
 
 # Client
-MINIO_CLIENT_ENDPOINT=scooter-minioserver-1   # Name from Docker-Compose file can change it if wanted
+MINIO_CLIENT_ENDPOINT=scooter_minioserver_1   # Name from Docker-Compose file can change it if wanted
 MINIO_CLIENT_USESSL=false                     # Needed for this script
 MINIO_CLIENT_ACCESSKEY=root                   # Default u can change it
 MINIO_CLIENT_SECRETKEY=minioadmin             # Default u can change it
@@ -947,7 +947,7 @@ GF_AUTH_ANONYMOUS_ORG_ROLE=Admin              # Default u can change it
 PAYPAL_CLIENTID=*********                     # Your PayPal Client Id
 
 # Scooter One
-SERVER=scooter-fullstack-1                    # Name from Docker-Compose file can change it if wanted
+SERVER=scooter_fullstack_1                    # Name from Docker-Compose file can change it if wanted
 ID=1                                          # Default u can change it
 ```
 

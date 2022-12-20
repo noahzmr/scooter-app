@@ -1,0 +1,17 @@
+{
+    // "transform": {
+    //     "^.+\\.js?$": "js-jest"
+    // },
+    "testEnvironment": "node",
+    "testRegex": "src/.*\\.(test|spec)?\\.(js|ts|tsx|jsx)$",
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "node"
+    ],
+    "collectCoverage": true,
+    "verbose": true
+}
